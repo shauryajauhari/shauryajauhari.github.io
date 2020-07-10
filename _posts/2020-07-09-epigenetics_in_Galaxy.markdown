@@ -8,4 +8,4 @@ fig-caption: # Add figcaption (optional)
 tags: [ChIP-Seq, DNA Methylation]
 ---
 
-
+<p> We are dealing with sequencing data, and the magnitude of data is so immersive that the efforts in analysis are very tedious and sophisticated. It is always better to make conscious choices of tools and their respective paramters, at every stage, as this may weed off any prospective errors.</p>
