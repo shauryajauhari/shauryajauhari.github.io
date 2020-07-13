@@ -10,11 +10,11 @@ tags: [ChIP-Seq, DNA Methylation]
 
 <p> We are dealing with sequencing data, and the magnitude of data is so immersive that the efforts in analysis are very tedious and sophisticated. It is always better to make conscious choices of tools and their respective paramters, at every stage, as this may weed off any prospective errors.</p>
 
-<p> Before delving into the epigenetic data analysis, let us cover the basics of <b>[Quality Control](https://galaxyproject.github.io/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html#inspect-a-raw-sequence-file)</b> and <b>[Data Mapping](https://galaxyproject.github.io/training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html)</b>. These pipelines are available from the official <b>[Galaxy Training service](https://galaxyproject.github.io/training-material/)</b>, yet we are going to cover them swiftly here.</p>
+<p> Before delving into the epigenetic data analysis, let us cover the basics of <b><a href= "https://galaxyproject.github.io/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html#inspect-a-raw-sequence-file"> Quality Control </a></b> and <b><a href = "https://galaxyproject.github.io/training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html" > Data Mapping </a></b>. These pipelines are available from the official <b><a href= "https://galaxyproject.github.io/training-material/" > Galaxy Training service </a></b>, yet we are going to cover them swiftly here.</p>
 
 ## Quality Control
 
-<p> Before anything though, we must execute the galaxy instance and create a session; then load the file to examine. Please refer to <b>[Introduction To Galaxy](https://rpubs.com/shauryajauhari/introGalaxy)</b> for details. </p>
+<p> Before anything though, we must execute the galaxy instance and create a session; then load the file to examine. Please refer to <b><a href= "https://rpubs.com/shauryajauhari/introGalaxy" > Introduction To Galaxy </a> </b> for details. </p>
 <p>We shall commence by assigning an appropriate name for our analysis session. This can be achieved via renaming the "unnamed history".</p>
 <br>
 <p align="center">
@@ -33,6 +33,13 @@ tags: [ChIP-Seq, DNA Methylation]
 </p>
 <br>
 
+<p>When the data has been successfully loaded into the session's library (history), a green ambience could be realized in the file listing. The next step is to install an appropriate tool. For our case, we shall implement <b><a href = "https://www.bioinformatics.babraham.ac.uk/projects/fastqc/" > FASTQC </a></b>. To install a tool in the local distribution of galaxy, please follow the link <a href = "http://shauryajauhari.github.io/installing_tools_in_galaxy/" > here </a>.</p>
+
+
+
+
 
 ## Mapping
+
+<p> Hello there </p>
 
