@@ -9,7 +9,7 @@ tags: [Galaxy]
 ---
 
 
-<p> Ton install tools into a local installation (development version) of galaxy, we may refer this <a href = "https://galaxyproject.org/admin/tools/add-tool-from-toolshed-tutorial/" > link</a>, methodology for which has been briefly described below.</p> Tools can be installed into galaxy using <i> Tool Shed</i>, and several other options that also allow to incorporate custom tools. However, for the limited scope of this tutorial, we shall stick to installing tools with <b>Tool Shed</b>. 
+<p> To install tools into a local installation (development version) of galaxy, we may refer this <a href = "https://galaxyproject.org/admin/tools/add-tool-from-toolshed-tutorial/" > link</a>, methodology for which has been briefly described below.</p> Tools can be installed into galaxy using <i> Tool Shed</i>, and several other options that also allow to incorporate custom tools. However, for the limited scope of this tutorial, we shall stick to installing tools with <b>Tool Shed</b>. 
 
 ## Tool Shed
 <p> As the name suggests, this could be deemed as a master-repository that holds other repositories with certain standard set of tools, that a typical galaxy environment would require; an suitable analogy to tool shed could be <a href = "https://cran.r-project.org/" > CRAN </a> in R that holds various packages for distinct usages. Since the development version of galaxy, that a user installs, is a <i>virgin</i> instance, we need to load it up with the kind of tools pertinent to our analysis. The protocol is listed as below.</p>
