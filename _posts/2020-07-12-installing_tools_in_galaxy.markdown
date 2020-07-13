@@ -45,6 +45,8 @@ To ensure that the galaxy is connected to the main tool shed, view the configura
 </p>
 <br>
 
+<b><li> Installation </li></b>
+
 <p> For example, let us try installing <i>fastqc</i> into the system. </p>
 
 <p>In the "search repositories" text input control, search for the keywork "FASTQC".</p>
@@ -66,7 +68,6 @@ To ensure that the galaxy is connected to the main tool shed, view the configura
 </p>
 <br>
 
-
 <p> We can also choose to view the <i>Advance Settings</i> that provide options to install dependencies for the selected tool.</p>
 
 <p align="left">
@@ -81,13 +82,9 @@ To ensure that the galaxy is connected to the main tool shed, view the configura
 </p>
 <br>
 
-
-
-
-
-
-
-
-
+<p align="left">
+  <img width="600" src="/assets/img/toolDone.png">
+</p>
+<br>
 
 </ol>
