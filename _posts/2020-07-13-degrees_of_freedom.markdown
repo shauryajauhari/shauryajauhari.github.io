@@ -16,4 +16,6 @@ tags: [Statistics]
 <br>
 
 <p><i><b>Score(Exam1) + Score(Exam2) + Score(Exam3) &equiv; Grade(PASS/ FAIL)</b></i></p>
+<br>
 
+<p>If the student scores 2 in <i>Exam1</i>, 3 in <i>Exam2</i>, she is left with <b>"NO OPTION" but to score atleast 5 in Exam3</b>. Thereby, we can imagine that she has a <i>free hand</i> in the scores of the first two exams, but has to concede to the third one with a definitive constraint. Thus, the model has 3-1, i.e. 2 degrees of freedom.</p>
