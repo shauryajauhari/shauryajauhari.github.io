@@ -115,12 +115,65 @@ tags: [ChIP-Seq, DNA Methylation]
 <p> An archive file will be available for download, expanding which we get access to the result data. The HTML results file holds summary plots from FASTQC. Let us review a few of them here.</p><br>
 
 
-<h4>Per Base Sequence Quality  </h4>
+<h4> Per Base Sequence Quality </h4>
 
+<p> The sequence length inferred by the tool is 37. The following plot has the read-length defined in the x-axis and hence, each position for the base in the read. The y-axis represents the quality scores for each position, that are enlisted with box-plots (A fair description for box-plots is available <a href = "https://www.dummies.com/education/math/statistics/interpreting-box-plots/" > here </a>). A quality score is a metric for a base-call; <i> how confident is the sequencer is calling spade a spade</i>.</p>
+
+<figure>
 <p align="left">
-  <img width="500" src="/assets/img/perBaseSequenceQuality.png">
+  <img src="/assets/img/perBaseSequenceQuality.png" width="500" alt="" title="">
+  <figcaption> Figure 1. Per Base Sequence Quality: A report from FASTQC </figcaption>
 </p>
+</figure>
 <br>
+
+<p>As seen above, the background of the graph is segemented into three distinct, yet intuitive, zones. The "green" zone is reminiscent of a good score (usually a score of 30 is considered an acceptable quantum). The "orange" and "red" zones depict average and poor qualities, respectively. It is also commonly noticed that the quality of the reads tapers at the end. This phenomena can be attributed to signal decay of phasing during a sequencing cycle. A better explanation can be seen <a href = "https://hbctraining.github.io/Intro-to-rnaseq-hpc-salmon/lessons/qc_fastqc_assessment.html" > here </a>.</p>
+
+
+<h4> Per Sequence Quality Scores </h4>
+
+<p>In contrast to the above plot, this graphic portrays the mean <a href = "https://www.phrap.com/phred/" > Phred Score </a>for the entire length of a read sequence, for all reads(x-axis), and showcases the number of reads with that score(y-axis). So, while Figure 1 examines a read individually, Figure 2 can be sourced to draw conclusions about the entire set of reads from a sequencing experiment.</p>
+
+
+<figure>
+<p align="left">
+  <img src="/assets/img/perSequenceQualityScores.png" width="500" alt="" title="">
+  <figcaption> Figure 2. Sequence Quality Scores: A report from FASTQC </figcaption>
+</p>
+</figure>
+<br>
+
+
+<h4> Per Base Sequence Content </h4>
+
+<p></p>
+
+
+<figure>
+<p align="left">
+  <img src="/assets/img/perBaseSequenceContent.png" width="500" alt="" title="">
+  <figcaption> Figure 3. Per Base Sequence Content: A report from FASTQC </figcaption>
+</p>
+</figure>
+<br>
+
+
+<h4> Per Sequence GC Content </h4>
+
+<p></p>
+
+
+<figure>
+<p align="left">
+  <img src="/assets/img/perSequenceGC.png" width="500" alt="" title="">
+  <figcaption> Figure 4. Per Sequence GC Content: A report from FASTQC </figcaption>
+</p>
+</figure>
+<br>
+
+
+
+
 
 
 
