@@ -10,9 +10,9 @@ tags: [ChIP-Seq, DNA Methylation]
 
 <p> We are dealing with sequencing data, and the magnitude of data is so immersive that the efforts in analysis are very tedious and sophisticated. It is always better to make conscious choices of tools and their respective paramters, at every stage, as this may weed off any prospective errors.</p>
 
-<p> Before delving into the epigenetic data analysis, let us cover the basics of <b><a href= "https://galaxyproject.github.io/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html#inspect-a-raw-sequence-file"> Quality Control </a></b> and <b><a href = "https://galaxyproject.github.io/training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html" > Data Mapping </a></b>. These pipelines are available from the official <b><a href= "https://galaxyproject.github.io/training-material/" > Galaxy Training service </a></b>, yet we are going to overview them swiftly here.</p>
+<p> Before delving into the epigenetic data analysis, let us cover the basics of <b><a href= "https://galaxyproject.github.io/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html#inspect-a-raw-sequence-file"> Quality Control </a></b> and <b><a href = "https://galaxyproject.github.io/training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html" > Data Mapping </a></b>. These pipelines are available from the official <b><a href= "https://galaxyproject.github.io/training-material/" > Galaxy Training service </a></b>, yet we are going to overview some of them swiftly here.</p>
 
-<h2> Quality Control </h2>
+<h1> Quality Control </h1>
 
 <p> Before anything though, we must execute the galaxy instance and create a session; then load the file to examine. Please refer to <b><a href= "https://rpubs.com/shauryajauhari/introGalaxy" > Introduction To Galaxy </a> </b> for details. </p>
 <p>We shall commence by assigning an appropriate name for our analysis session. This can be achieved via renaming the "unnamed history".</p>
@@ -32,8 +32,6 @@ tags: [ChIP-Seq, DNA Methylation]
   <img width="500" height="300" src="/assets/img/dataLoading.png">
 </p>
 <br>
-
-
 
 
 <p>When the data has been successfully loaded into the session's library (history), a green ambience could be realized in the file listing.</p>
@@ -97,7 +95,8 @@ tags: [ChIP-Seq, DNA Methylation]
 </p>
 <br>
 
-<h3> Results </h3>
+
+<h2> Visual Inspection of Results</h2>
 
 <p> The results are available as raw data (text file) and a formatted HTML visualization file. While both the formats can be downloaded, via the specific icon link, the former could be visualized in the galaxy interface. The latter has to be explicitly opened in a web-browser to peruse.</p>
 
@@ -115,14 +114,14 @@ tags: [ChIP-Seq, DNA Methylation]
 <p> An archive file will be available for download, expanding which we get access to the result data. The HTML results file holds summary plots from FASTQC. Let us review a few of them here.</p><br>
 
 
-<h4> Per Base Sequence Quality </h4>
+<h3> Per Base Sequence Quality </h3>
 
 <p> The sequence length inferred by the tool is 37. The following plot has the read-length defined in the x-axis and hence, each position for the base in the read. The y-axis represents the quality scores for each position, that are enlisted with box-plots (A fair description for box-plots is available <a href = "https://www.dummies.com/education/math/statistics/interpreting-box-plots/" > here </a>). A quality score is a metric for a base-call; <i> how confident is the sequencer is calling spade a spade</i>.</p>
 
 <figure>
 <p align="left">
   <img src="/assets/img/perBaseSequenceQuality.png" width="500" alt="" title="">
-  <figcaption> Figure 1. Per Base Sequence Quality: A report from FASTQC </figcaption>
+  <figcaption> <b>Figure 1.</b> Per Base Sequence Quality: A report from FASTQC </figcaption>
 </p>
 </figure>
 <br>
@@ -130,7 +129,7 @@ tags: [ChIP-Seq, DNA Methylation]
 <p>As seen above, the background of the graph is segemented into three distinct, yet intuitive, zones. The "green" zone is reminiscent of a good score (usually a score of 30 is considered an acceptable quantum). The "orange" and "red" zones depict average and poor qualities, respectively. It is also commonly noticed that the quality of the reads tapers at the end. This phenomena can be attributed to signal decay of phasing during a sequencing cycle. A better explanation can be seen <a href = "https://hbctraining.github.io/Intro-to-rnaseq-hpc-salmon/lessons/qc_fastqc_assessment.html" > here </a>.</p>
 
 
-<h4> Per Sequence Quality Scores </h4>
+<h3> Per Sequence Quality Scores </h3>
 
 <p>In contrast to the above plot, this graphic portrays the mean <a href = "https://www.phrap.com/phred/" > Phred Score </a>for the entire length of a read sequence, for all reads(x-axis), and showcases the number of reads with that score(y-axis). So, while Figure 1 examines a read individually, Figure 2 can be sourced to draw conclusions about the entire set of reads from a sequencing experiment.</p>
 
@@ -138,41 +137,60 @@ tags: [ChIP-Seq, DNA Methylation]
 <figure>
 <p align="left">
   <img src="/assets/img/perSequenceQualityScores.png" width="500" alt="" title="">
-  <figcaption> Figure 2. Sequence Quality Scores: A report from FASTQC </figcaption>
+  <figcaption> <b>Figure 2.</b> Sequence Quality Scores: A report from FASTQC </figcaption>
 </p>
 </figure>
 <br>
 
 
-<h4> Per Base Sequence Content </h4>
+<h3> Per Base Sequence Content </h3>
 
-<p></p>
+<p>The following plot depicts the proportions of Adenine (A), Guanine (G), Thymine (T), and Cytosine (C) at each nucleotide position, across all reads in an input sequence. According to the <a href = "https://en.wikipedia.org/wiki/Chargaff%27s_rules" > Chargaff's rule </a>, the usual consequence is that all bases would be aggregately similar in number in a random read, as A always binds to T and G to C. In the current scenario, we find some jitter at the initial part of the read (5' side). This is majorly a technical bias, and can be dealt with by trimming an initial score of nucleotides from the start of the read.</p>
 
 
 <figure>
 <p align="left">
   <img src="/assets/img/perBaseSequenceContent.png" width="500" alt="" title="">
-  <figcaption> Figure 3. Per Base Sequence Content: A report from FASTQC </figcaption>
+  <figcaption> <b>Figure 3.</b> Per Base Sequence Content: A report from FASTQC </figcaption>
 </p>
 </figure>
 <br>
 
 
-<h4> Per Sequence GC Content </h4>
+<h3> Per Sequence GC Content </h3>
 
-<p></p>
+<p>The multifaceted significance of the GC content in the genome is well known [1]. As remarked earlier, the theoretical adage is that the percentage of G and C bases shall be uniform for all reads. The following plot depicts the theoretical (blue) and the experimental (red) GC content distribution. The peak signifies the overall GC content in the underlying genome.</p>
+
+
+<p><i>P.S. You would also note a warning icon for this and the previous analysis. This might mean some deviation in the expected results, but <b>not a failure</b>. Here, for example, the graph is slightly skewed on the left side and is narrowly higher than the theoretical normal.</i></p>
 
 
 <figure>
 <p align="left">
   <img src="/assets/img/perSequenceGC.png" width="500" alt="" title="">
-  <figcaption> Figure 4. Per Sequence GC Content: A report from FASTQC </figcaption>
+  <figcaption> <b>Figure 4.</b> Per Sequence GC Content: A report from FASTQC </figcaption>
 </p>
 </figure>
 <br>
 
+<h2> Recasting the Reads </h2>
+
+<p>Why do we need this? As reported in the section above, we need to rectify the probable abnormalities in the reads. Amongst others, it is required to:
+<ol>
+<li> Remove reads with low quality score and lengths. </li>
+<li> Trim the front- and rear-fractions of the reads with disturbed nucleotide proportions. </li>
+</ol></p>
+
+<p>To accomplish these tasks, we shall employ <a href = "https://cutadapt.readthedocs.io/en/stable/" > Cutadapt</a>. This tool will allow us to remove <a href = "https://en.wikipedia.org/wiki/Adapter_(genetics)" > adapter sequences </a> in the reads, as well as implement other quality control measures.</p>
 
 
+
+
+<h1> References </h1>
+
+<ol>
+<li> Marie Sémon, Dominique Mouchiroud, Laurent Duret, Relationship between gene expression and GC-content in mammals: statistical significance and biological relevance, Human Molecular Genetics, Volume 14, Issue 3, 1 February 2005, Pages 421–427, https://doi.org/10.1093/hmg/ddi038 </li>
+</ol>
 
 
 
