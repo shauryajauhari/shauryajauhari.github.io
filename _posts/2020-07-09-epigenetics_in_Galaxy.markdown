@@ -181,10 +181,36 @@ tags: [ChIP-Seq, DNA Methylation]
 <li> Trim the front- and rear-fractions of the reads with disturbed nucleotide proportions. </li>
 </ol></p>
 
-<p>To accomplish these tasks, we shall employ <a href = "https://cutadapt.readthedocs.io/en/stable/" > Cutadapt</a>. This tool will allow us to remove <a href = "https://en.wikipedia.org/wiki/Adapter_(genetics)" > adapter sequences </a> in the reads, as well as implement other quality control measures.</p>
+<p>To accomplish these tasks, we shall employ <a href = "https://cutadapt.readthedocs.io/en/stable/" > Cutadapt</a>. This tool will allow us to remove <a href = "https://en.wikipedia.org/wiki/Adapter_(genetics)" > adapter sequences </a> in the reads, as well as implement other quality control measures. The results from <i>Cutadapt</i> are fairly comprehensive and easily interpretable.</p>
 
+<p>Before proceeding, we'll have to install this tool in our galaxy instance. To do that please follow the protocol, as enlisted <a href = "http://shauryajauhari.github.io/installing_tools_in_galaxy/" > here </a>. Surely, galaxy will have no initial reference for the tool.</p>
 
+<figure>
+<p align="left">
+  <img src="/assets/img/notFound.png" width="500" alt="" title="">
+</p>
+</figure>
+<br>
 
+Meanwhile ...
+
+<figure>
+<p align="left">
+  <img src="/assets/img/meanwhile.png" width="500" alt="" title="">
+</p>
+</figure>
+<br>
+
+Done.
+
+<figure>
+<p align="left">
+  <img src="/assets/img/done.png" width="500" alt="" title="">
+</p>
+</figure>
+<br>
+
+<p>
 
 <h1> References </h1>
 
