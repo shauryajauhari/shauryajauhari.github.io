@@ -210,7 +210,50 @@ Done.
 </figure>
 <br>
 
-<p>
+<p>Let us now execute Cutadapt with the following parameters:
+<ul>
+<li> <i>Single-end or Paired-end</i>: Single-end </li>
+<li> <i>Minimum length</i>: 20 (Filter Options)</li>
+<li> <i>Quality cutoff</i>: 20 (Read Modification Options)</li>
+<li> <i>Report</i>: Yes (Output Options)</li>
+</ul>
+</p>
+
+
+<p>When finished, download and check the results. </p>
+<p align="left">
+  <img width="500" src="/assets/img/cutadaptDone.png">
+</p>
+<br>
+
+
+<p> The results show that the data has been pre-normalized and there were no adaptor sequences found (they were already trimmed). There are about 0.3% reads that were filtered that didn't abide by the quality index of 20.</p>
+
+<p>When finished, download and check the results. </p>
+<p align="left">
+  <img width="700" src="/assets/img/cutadaptReport.png">
+</p>
+<br>
+
+
+<span style="color:#800080" >
+<p><b>EXCERCISE</b></p>
+<ol>
+<li> Re-run Fastqc on the filtered data and examine the results. </li>
+</ol>
+</span>
+
+<p> For illustration purposes, single-end data is a <i>not-so-bad</i> choice. Practically though, we are often confronted with the paired-end data. For both ends of a read sequence, a single-end data means that the sequence has been derived unidirectionally. Contrarily, for paired-end data, that sequence is derived bi-directionally. More condifence can be realized while working with paired-end data. We would encounter file names ending like _1 and _2 for sequence files for the same segment.</p>
+
+<p align="center">
+  <img width="700" src="/assets/img/singleEndpairedEnd.png">
+</p>
+<br>
+
+<p> To work with the paired-end data, let us download the other file from the <a href= "https://zenodo.org/record/61771/files/GSM461178_untreat_paired_subset_2.fastq" > source </a>. As before, rename this file to <i>reads_2</i> for consistency and re-run the FASTQC for this data now. We shall also install <a href = "https://pypi.org/project/multiqc/" > MultiQC </a> to aggregate results from FASTQC runs for forward and reverse strand data. </p>
+
+
+
 
 <h1> References </h1>
 
