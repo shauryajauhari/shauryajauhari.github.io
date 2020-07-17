@@ -231,7 +231,7 @@ Done.
 
 
 <span style="color:#800080" >
-<p><b>EXCERCISE</b></p>
+<p><b>Exercise</b></p>
 <ol>
 <li> Run Fastqc on the filtered data and examine the results. </li>
 </ol>
@@ -247,7 +247,7 @@ Done.
 <p> To work with the paired-end data, let us download the other file from the <a href= "https://zenodo.org/record/61771/files/GSM461178_untreat_paired_subset_2.fastq" > source </a>. As before, rename this file to <i>reads_2</i> for consistency and re-run the FASTQC for this data now. </p>
 
 <span style="color:#800080" >
-<p><b>EXCERCISE</b></p>
+<p><b>Exercise</b></p>
 <ol>
 <li> Execute Fastqc on <i> reads_2 </i> and compare the results with those of <i>reads_1</i>. </li>
 </ol>
@@ -270,7 +270,7 @@ The results are as follows:
 <br>
 
 <span style="color:#800080" >
-<p><b>EXCERCISE</b></p>
+<p><b>Exercise</b></p>
 <ol>
 <li> Compare the overall results of Cutadapt with those of <i>reads_1</i>. </li>
 <li> Execute Cutadapt on the FASTQC output data for paired-end reads and analyze the results.</li>
