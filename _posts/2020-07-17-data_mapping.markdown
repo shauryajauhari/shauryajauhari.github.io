@@ -21,4 +21,6 @@ tags: [ChIP-Seq, DNA Methylation]
 <li> <i> https://zenodo.org/record/1324070/files/wt_H3K4me3_read2.fastq.gz </i> </li>
 </ol>
 
-<p> As noted, the data could be manually downloaded from the website and then loaded to the galaxy instance, or the galaxy interface provides for the direct download as well.</p>
+<p> As noted, the data could be manually downloaded from the website and then loaded to the galaxy instance, or the galaxy interface provides for the direct download as well. After the files, have been loaded we shall rename these paired-end files, again, as <i> reads_1 </i> and <i> reads_2 </i>. This is the kind of data we would usually get, directly from a sequencing facility, and might be prone to standard errors of quality. Anew, the aforementined <a href = "https://shauryajauhari.github.io/quality_control/" > tutorial </a> can be referred for rectifying quality issues. We won't get into the ways of mitigating quality setbacks, and join back here right after. </p>
+
+
