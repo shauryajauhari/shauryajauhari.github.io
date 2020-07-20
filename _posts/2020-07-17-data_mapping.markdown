@@ -24,3 +24,17 @@ tags: [ChIP-Seq, DNA Methylation]
 <p> As noted, the data could be manually downloaded from the website and then loaded to the galaxy instance, or the galaxy interface provides for the direct download as well. After the files, have been loaded we shall rename these paired-end files, again, as <i> reads_1 </i> and <i> reads_2 </i>. This is the kind of data we would usually get, directly from a sequencing facility, and might be prone to standard errors of quality. Anew, the aforementined <a href = "https://shauryajauhari.github.io/quality_control/" > tutorial </a> can be referred for rectifying quality issues. We won't get into the ways of mitigating quality setbacks, and join back here right after. </p>
 
 
+<span style="color:#800080" >
+<p><b>Exercise</b></p>
+<ol>
+<li> Run quality control measures as illustrated in the other tutorial on the paried-end reads. </li>
+</ol>
+</span>
+
+
+<h2>Mapping data to the <i>Reference Genome</i></h2>
+
+<p>Let us begin by the answering the meaning of a Reference Genome. It is a sequence of nucleotides (bases/ base-pairs) that acts as a template for a representative species. Every individual will have a unique genopme assembly, and so a reference genome is usually a <i>chimera</i>; henceforth it does not accord to a single organism. As the sequencing technologies advance and we further in precision and lower costs, we are tempted to sequence more individuals from a speices to enhance our biological understanding as well. This engenders us having different versions of genomes, eg. hg19, hg38 versions of the Homo sapiens, etc.</p>
+
+<p> For using <i>Bowtie2<i>, the first step will be to install it into the galaxy instance. Let us again go back to the tutorial enlisted <a href = "http://shauryajauhari.github.io/installing_tools_in_galaxy/" > here </a> and do that first. </p>
+

@@ -8,7 +8,7 @@ fig-caption: # Add figcaption (optional)
 tags: [NGS, Seq-Data]
 ---
 
-<p> Before anything though, we must execute the galaxy instance and create a session; then load the file to examine. Please refer to <b><a href= "https://rpubs.com/shauryajauhari/introGalaxy" > Introduction To Galaxy </a> </b> for details. </p>
+<p> Before anything though, we must execute the galaxy instance and create a session; then load the file to examine. Please refer to <b><a href= " https://htmlpreview.github.io/?https://github.com/shauryajauhari/assorted/blob/master/IntroGalaxy-rpubs.html#/ " > Introduction To Galaxy </a> </b> for details. </p>
 <p>We shall commence by assigning an appropriate name for our analysis session. This can be achieved via renaming the "unnamed history".</p>
 <br>
 <p align="left">
