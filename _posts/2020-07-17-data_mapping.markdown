@@ -70,7 +70,7 @@ tags: [ChIP-Seq, DNA Methylation]
 <br>
 
 <p> Why so? Because the forked version of the galaxy does not contain the data or tools, as these are completely customizable. However, these can be made available by following certain protocols. </p>
-<p> A contemporary way to load a genome into a local galaxy, is to use <b>Data managers</b>. These can be installed just like any other tool using the administrator profile. </p>
+<p> There is an option of the <a href = "https://wiki.galaxyproject.org/Admin/UseGalaxyRsync" > <i>rsync</i> utility </a> that allows a user to download data from the <a href = "https://usegalaxy.org/" > Main Galaxy </a>, however, a more recommended and contemporary way to load a reference genome into a local instance of galaxy, is to use <a href = "https://wiki.galaxyproject.org/Admin/Tools/DataManagers" > <b>Data Managers</b> </a>. These can be installed, just like any other tool, through an administrator profile. We'll focus on using data managers in this exercise. </p>
 
 <p align="center">
   <img width="500" src="/assets/img/searchDataManagers.png">
