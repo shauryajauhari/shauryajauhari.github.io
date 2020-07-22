@@ -69,8 +69,10 @@ tags: [ChIP-Seq, DNA Methylation]
 </p>
 <br>
 
-<p> Why so? Because the forked version of the galaxy does not contain the data or tools, as these are completely customizable. However, these can be made available by following certain protocols. </p>
+<p> Why so? Because the forked version of the galaxy does not contain the "actual" data or tools, as these are completely left to the discretion of the user and so are not feasible to be accompanied with every instance of galaxy due to requirement and memory aspects. However, these can be made available by following certain protocols. </p>
 <p> There is an option of the <a href = "https://wiki.galaxyproject.org/Admin/UseGalaxyRsync" > <i>rsync</i> utility </a> that allows a user to download data from the <a href = "https://usegalaxy.org/" > Main Galaxy </a>, however, a more recommended and contemporary way to load a reference genome into a local instance of galaxy, is to use <a href = "https://wiki.galaxyproject.org/Admin/Tools/DataManagers" > <b>Data Managers</b> </a>. These can be installed, just like any other tool, through an administrator profile. We'll focus on using data managers in this exercise. </p>
+
+<p>There is also a possibility of manually uploading a genome file (.fa, .fasta), and then recalling it from session history to be used as the purported reference genome. There are two problems, albeit. First, it is not comforting to manually load reference genome and build indices for every tool that we want to use. It is just too time consuming and un-professional. We want a reference genome to be available to every tool and not just the current one. Also, an uploaded file is unique to a history. Second, the tools take a little extra time to process the external, reference genome file, as opposed to the ones that are already "build-in". Consider akin to this scenario the mobile apps that are automatically off-loaded from the system due to seldom usage. This aids memory management. Now, if you want them again, the system will download them back easily with "cached" indices. This is far efficient than installing the new ones.</p>
 
 <p align="center">
   <img width="500" src="/assets/img/searchDataManagers.png">
