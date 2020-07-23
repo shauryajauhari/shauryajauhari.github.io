@@ -79,7 +79,7 @@ tags: [ChIP-Seq, DNA Methylation]
 </p>
 <br>
 
-<p> A particular data manager, <b><i>data_manager_fetch_genome_dbkeys_all_fasta</i></b>, is required to load genome into the local instance of galaxy. </p>
+<p> A particular data manager, <b><i>data_manager_fetch_genome_dbkeys_all_fasta</i></b>, is required to load genome into the local instance of galaxy. <i> P.S. You can seek this workshop <a href = "https://github.com/gvlproject/dagobah-training/blob/master/sessions/05-reference-genomes/ex1-reference-genomes.md" > page </a> for details. Also, bear in mind that the order of installation of the data managers is advised by the technical team of Galaxy. They recommend - retrieve fasta, index for samtools, index for picard, and then index for any other tools-in-use. Each step must be allowed to complete before proceeding. </i></p>
 
 <p align="center">
   <img width="500" src="/assets/img/fetchGenomeDataManager.png">
