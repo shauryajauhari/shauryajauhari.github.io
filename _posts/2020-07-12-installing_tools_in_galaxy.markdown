@@ -9,22 +9,22 @@ tags: [Galaxy]
 ---
 
 
-<p> To install tools into a local installation (development version) of galaxy, we may refer this <a href = "https://galaxyproject.org/admin/tools/add-tool-from-toolshed-tutorial/" > link</a>, methodology for which has been briefly described below.</p> Tools can be installed into galaxy using <i> Tool Shed</i>, and several other options that also allow to incorporate custom tools. However, for the limited scope of this tutorial, we shall stick to installing tools with <b>Tool Shed</b>. 
+<p> To install tools into a local installation (production version) of Galaxy, we may refer this <a href = "https://galaxyproject.org/admin/tools/add-tool-from-toolshed-tutorial/" > link</a>, methodology for which has been briefly described below.</p> Tools can be installed into Galaxy using <i> Tool Shed</i>, and several other options that also allow to incorporate custom tools. However, for the limited scope of this tutorial, we shall stick to installing tools with <b>Tool Shed</b>. 
 
 ## Tool Shed
-<p> As the name suggests, this could be deemed as a master-repository that holds other repositories with certain standard set of tools, that a typical galaxy environment would require; an suitable analogy to tool shed could be <a href = "https://cran.r-project.org/" > CRAN </a> in R that holds various packages for distinct usages. Since the development version of galaxy, that a user installs, is a <i>virgin</i> instance, we need to load it up with the kind of tools pertinent to our analysis. The protocol is listed as below.</p>
+<p> As the name suggests, this could be deemed as a master-repository that holds other repositories with certain standard set of tools, that a typical Galaxy environment would require; an suitable analogy to tool shed could be <a href = "https://cran.r-project.org/" > CRAN </a> in R that holds various packages for distinct usages. Since the production version of Galaxy, that a user installs, is a <i>virgin</i> instance, we need to load it up with the kind of tools pertinent to our analysis. The protocol is listed as below.</p>
 <br>
 
 <ol>
 <b> <li> Connecting to Tool Shed </li></b>
-<p> By default, galaxy is already connected to the <a href = "https://toolshed.g2.bx.psu.edu/" > Main Tool Shed </a>. Another requisite to install tools from the tool shed, is <a href = "https://www.mercurial-scm.org/" > Mercurial </a> that must exists in the system hosting the developmental version of galaxy. 
-To ensure that the galaxy is connected to the main tool shed, view the configuration file for galaxy. </p>
+<p> By default, Galaxy is already connected to the <a href = "https://toolshed.g2.bx.psu.edu/" > Main Tool Shed </a>. Another requisite to install tools from the tool shed, is <a href = "https://www.mercurial-scm.org/" > Mercurial </a> that must exists in the system hosting the production version of Galaxy. 
+To ensure that the Galaxy is connected to the main tool shed, view the configuration file for Galaxy (/path/to/galaxy/config/galaxy.yml). </p>
 
 <p align="left">
   <img width="400" src="/assets/img/cmdConfigGalaxy.png">
 </p>
 
-<p>The following entry is the link to the resource. Likewise, any number of tool sheds could be appended to the galaxy instance.</p>
+<p>The following entry is the link to the resource. Likewise, any number of tool sheds could be appended to the Galaxy instance.</p>
 
 <p align="left">
   <img width="600" src="/assets/img/xmlToolShed.png">
@@ -33,7 +33,7 @@ To ensure that the galaxy is connected to the main tool shed, view the configura
 
 <b><li> Open the Tool Shed </li></b>
 
-<p>In the galaxy interface, go the the admin control tab.</p>
+<p>In the Galaxy interface, go the the <b>Admin</b> control tab.</p>
 <p align="left">
   <img width="400" src="/assets/img/gotoAdmin.png">
 </p>
@@ -75,7 +75,7 @@ To ensure that the galaxy is connected to the main tool shed, view the configura
 </p>
 <br>
 
-<p> Finally, the tool gets cloned and installed in the galaxy. </p>
+<p> Finally, the tool gets cloned and installed in the Galaxy. </p>
 
 <p align="left">
   <img width="600" src="/assets/img/inProgress.png">

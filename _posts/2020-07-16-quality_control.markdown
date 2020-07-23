@@ -8,7 +8,7 @@ fig-caption: # Add figcaption (optional)
 tags: [NGS, Seq-Data]
 ---
 
-<p> Before anything though, we must execute the galaxy instance and create a session; then load the file to examine. Please refer to <b><a href= " https://htmlpreview.github.io/?https://github.com/shauryajauhari/assorted/blob/master/IntroGalaxy-rpubs.html#/ " > Introduction To Galaxy </a> </b> for details. </p>
+<p> Before anything though, we must execute the Galaxy instance and create a session; then load the file to examine. Please refer to <b><a href= " https://htmlpreview.github.io/?https://github.com/shauryajauhari/assorted/blob/master/IntroGalaxy-rpubs.html#/ " > Introduction To Galaxy </a> </b> for details. </p>
 <p>We shall commence by assigning an appropriate name for our analysis session. This can be achieved via renaming the "unnamed history".</p>
 <br>
 <p align="left">
@@ -48,7 +48,7 @@ tags: [NGS, Seq-Data]
 </p>
 <br>
 
-<p><i> P.S. Due to network issues, the data was manually downloaded from the source and uploaded to galaxy instance. </i></p>
+<p><i> P.S. Due to network issues, the data was manually downloaded from the source and uploaded to Galaxy instance. </i></p>
 
 
 <p>We can have a cursory glance at the data.</p>
@@ -69,14 +69,14 @@ tags: [NGS, Seq-Data]
 </p>
 <br>
 
-<p>On selecting the tool, the interface opens in the main panel of galaxy and the user is presented with a choice to select data for application. Before execution, we can choose the associated parameters just as we would specify in the command line. For now, we shall stick to the defaults.</p>
+<p>On selecting the tool, the interface opens in the main panel of Galaxy and the user is presented with a choice to select data for application. Before execution, we can choose the associated parameters just as we would specify in the command line. For now, we shall stick to the defaults.</p>
 
 <p align="left">
   <img width="500" src="/assets/img/beforeExecution.png">
 </p>
 <br>
 
-<p>When the job is submitted, the intermediary progress is denoted by an <i>bisque</i> tone in the right panel where the task has been highlighted. On completion, it turns to smooth green. </p>
+<p>When the job is submitted, the intermediary progress is denoted by an <i>orange/ bisque</i> tinge in the right panel where the task has been highlighted. On completion, it turns into a smooth green. </p>
 
 <p align="left">
   <img width="500" src="/assets/img/jobSubmitted.png">
@@ -92,7 +92,7 @@ tags: [NGS, Seq-Data]
 
 <h2> Visual Inspection of Results</h2>
 
-<p> The results are available as raw data (text file) and a formatted HTML visualization file. While both the formats can be downloaded, via the specific icon link, the former could be visualized in the galaxy interface. The latter has to be explicitly opened in a web-browser to peruse.</p>
+<p> The results are available as raw data (text file) and a formatted HTML visualization file. While both the formats can be downloaded, via the specific icon link, the former could be visualized in the Galaxy interface. The latter has to be explicitly opened in a web-browser to peruse.</p>
 
 <p align="left">
   <img width="500" src="/assets/img/rawDataResults.png">
@@ -125,7 +125,7 @@ tags: [NGS, Seq-Data]
 
 <h3> Per Sequence Quality Scores </h3>
 
-<p>In contrast to the above plot, this graphic portrays the mean <a href = "https://www.phrap.com/phred/" > Phred Score </a>for the entire length of a read sequence, for all reads(x-axis), and showcases the number of reads with that score(y-axis). So, while Figure 1 examines a read individually, Figure 2 can be sourced to draw conclusions about the entire set of reads from a sequencing experiment.</p>
+<p>In contrast to the above plot, this graphic portrays the mean <a href = "https://www.phrap.com/phred/" > Phred Score </a> for the entire length of a read sequence, for all reads (x-axis), and showcases the number of reads with that score (y-axis). So, while Figure 1 examines a read individually, Figure 2 can be sourced to draw conclusions about the entire set of reads from a sequencing experiment.</p>
 
 
 <figure>
@@ -177,7 +177,7 @@ tags: [NGS, Seq-Data]
 
 <p>To accomplish these tasks, we shall employ <a href = "https://cutadapt.readthedocs.io/en/stable/" > Cutadapt</a>. This tool will allow us to remove <a href = "https://en.wikipedia.org/wiki/Adapter_(genetics)" > adapter sequences </a> in the reads, as well as implement other quality control measures. The results from <i>Cutadapt</i> are fairly comprehensive and easily interpretable.</p>
 
-<p>Before proceeding, we'll have to install this tool in our galaxy instance. To do that please follow the protocol, as enlisted <a href = "http://shauryajauhari.github.io/installing_tools_in_galaxy/" > here </a>. Surely, galaxy will have no initial reference for the tool.</p>
+<p>Before proceeding, we'll have to install this tool in our Galaxy instance. To do that please follow the protocol, as enlisted <a href = "http://shauryajauhari.github.io/installing_tools_in_galaxy/" > here </a>. Surely, galaxy will have no initial reference for the tool.</p>
 
 <figure>
 <p align="left">
@@ -237,7 +237,7 @@ Done.
 </ol>
 </span>
 
-<p> For illustration purposes, single-end data is a <i>not-so-bad</i> choice. Practically though, we are often confronted with the paired-end data. For both ends of a read sequence, a single-end data means that the sequence has been derived unidirectionally. Contrarily, for paired-end data, that sequence is derived bi-directionally. More condifence can be realized while working with paired-end data. We would encounter file names ending like _1 and _2 for sequence files for the same segment.</p>
+<p> For illustration purposes, single-end data is a <i>not-so-bad</i> choice. Practically though, we are often confronted with the paired-end data. For both ends of a read sequence, a single-end data means that the sequence has been derived unidirectionally. Contrarily, for paired-end data, that sequence is derived bi-directionally. More condifence can be achieved while working with paired-end data. We would encounter file names ending like _1 and _2 for sequence files for the same segment.</p>
 
 <p align="center">
   <img width="700" src="/assets/img/singleEndpairedEnd.png">
