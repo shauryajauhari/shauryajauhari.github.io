@@ -113,6 +113,12 @@ tags: [ChIP-Seq, DNA Methylation]
 
 <br>
 <p align="center">
+  <img width="500" src="/assets/img/usingFetchFasta.png">
+</p>
+<br>
+
+<br>
+<p align="center">
   <img width="500" src="/assets/img/loadingMM10.png">
 </p>
 <br>
