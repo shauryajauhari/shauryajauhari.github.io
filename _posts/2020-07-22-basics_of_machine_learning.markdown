@@ -65,6 +65,26 @@ tags: [Mathematics, Statistics, Data Science]
 
 <p> There are manu flavors of classifiers available out there, but for this exercise, we shall be using the <b> Support Vector Machines (SVMs) </b> to accomplish the task at hand. We will employ the <a href = "https://scikit-learn.org/stable/" > <i>scikit-learn</i> </a> library in python; search for <i><b>sklearn_svm_classifier</b></i> in the repository and install the tool.</p>
 
+<h3> Support Vector Machines (SVMs) </h3>
+
+<p> <a href = "https://scikit-learn.org/stable/modules/svm.html#" > <b>SVMs</b> </a> have supported classification tasks quite formidably and essentially need no introduction to the field. The following graphics depict the fundamental idea. Also, various texts are available in print and online that can be accessed for the same. </p>
+
+
+<figure>
+<p align="left">
+  <img src="/assets/img/svmCore1.jpg" width="500" alt="" title="">
+  <figcaption> <b>Figure 2.</b> Class seperating hyperplanes in SVM </figcaption>
+</p>
+</figure>
+<br>
+
+<figure>
+<p align="left">
+  <img src="/assets/img/svmCore2.jpg" width="500" alt="" title="">
+  <figcaption> <b>Text Graphic 1.</b> SVM: Under the hood </figcaption>
+</p>
+</figure>
+<br>
 
 <h2> References </h2>
 
