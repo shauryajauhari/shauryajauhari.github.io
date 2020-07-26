@@ -281,5 +281,9 @@ The results are as follows:
 <h1> References </h1>
 
 <ol>
+
+<li> Bérénice Batut, 2020 Quality Control (Galaxy Training Materials). /training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html Online; accessed Mon Jul 27 2020 </li>
+
 <li> Marie Sémon, Dominique Mouchiroud, Laurent Duret, Relationship between gene expression and GC-content in mammals: statistical significance and biological relevance, Human Molecular Genetics, Volume 14, Issue 3, 1 February 2005, Pages 421–427, https://doi.org/10.1093/hmg/ddi038 </li>
+
 </ol>

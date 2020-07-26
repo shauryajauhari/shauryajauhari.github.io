@@ -64,3 +64,10 @@ tags: [Mathematics, Statistics, Data Science]
 <p> Since we are interested in a classification problem, we shall be structuring a ML model or classifier that better represents the patterns in the data and encompasses it's inherent features. The efficiency of the classifier is solely derived from the data it is trained upon and hence it is on the utmost importance to provide <i> clean and comprehensive data </i> to bring out the best. </p>
 
 <p> There are manu flavors of classifiers available out there, but for this exercise, we shall be using the <b> Support Vector Machines (SVMs) </b> to accomplish the task at hand. We will employ the <a href = "https://scikit-learn.org/stable/" > <i>scikit-learn</i> </a> library in python; search for <i><b>sklearn_svm_classifier</b></i> in the repository and install the tool.</p>
+
+
+<h2> References </h2>
+
+<ol>
+<li> Anup Kumar, 2020 Basics of machine learning (Galaxy Training Materials). /training-material/topics/statistics/tutorials/machinelearning/tutorial.html Online; accessed Sun Jul 26 2020  </li>
+</ol>

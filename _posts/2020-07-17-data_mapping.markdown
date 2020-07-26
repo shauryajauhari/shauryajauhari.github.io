@@ -138,4 +138,10 @@ tags: [ChIP-Seq, DNA Methylation]
 <p> These were generic indices. Now for our scenario, we would like to have the bowtie2-indexer installed. It's search term for the tool shed is <i><b> data_manager_bowtie2_index_builder </b></i>. Let's examine if that worked. </p>
 
 
+<h2> References </h2>
 
+<ol>
+
+<li> Joachim Wolff, Bérénice Batut, Helena Rasche, 2020 Mapping (Galaxy Training Materials). /training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html Online; accessed Mon Jul 27 2020 </li>
+
+</ol>
