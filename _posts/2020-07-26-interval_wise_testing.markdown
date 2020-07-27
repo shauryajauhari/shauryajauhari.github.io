@@ -13,6 +13,13 @@ tags: [Bioinformatics]
 
 <p> The data used in this exercise is of endogeneous retroviruses in mouse. The agenda is to compare the recombination hotspots in the flanking regions of fixed ETn versus the control regions. Apart from the two region-sets, the dataset also contains a feature “Recombination hotspots content”. More details about the dataset can be viewed in the formal tutorial [1]. </p>
 
+<h2> Tools In-Use </h2>
+
+The following tools are needed to be installed.
+
+<ol>
+<li> <b> IWTomics Load </b> tool from the <b> iwtomics_loadandplot </b> repository.</li>
+</ol>
 
 <h2> Loading Data </h2>
 
