@@ -26,7 +26,45 @@ tags: [Bioinformatics]
 <li> <b> Features' header </b><i> https://zenodo.org/record/1288429/files/features_header.tabular </i> </li>
 </ol>
 
-P.S. The "Features' header" file is corrupt at the source and might not be workable. We shall choose to omit that file.
+<p><i> P.S. The "Features' header" file is a txt file and might not be workable. We shall choose to edit attribues for that file. It is a general scenario in data handling, as most of the data is in the form of tables (tabular) and if supplied as a text file, is not interpreted appropriately by the method. To change the txt file to a tabular format, Galaxy provides for a built-in, data-type conversion facility; one can choose the "Edit attributes" (Pencil icon) for the file and proceed as follows. Also, <b> this example is not the part of this workflow </b>; though the file <b> features_header.tabular </b> can be dealt in a similar fashion after downloading from the source.</i> </p>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/problemStatement.png">
+</p>
+<br>
+
+<p> Look for the new data-type. All major data formats are supported by Galaxy. </p>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/changeDataType.png">
+</p>
+<br>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/newDataType.png">
+</p>
+<br>
+
+
+If everything goes well, you have the original file with a changed profile.
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/dataTypeChangeClick.png">
+</p>
+<br>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/dataTypeChangeDone.png">
+</p>
+<br>
+
+
+
 
 
 <h2> References </h2>

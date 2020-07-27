@@ -3,7 +3,7 @@ layout: post
 title: Introduction to Deep Learning
 date: 2020-07-26 14:15:21 +0230
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: # Add image post (optional)
+img: myNeuralNetGraphic.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Bioinformatics, Deep Learning, Statistics, Data Science]
 ---
@@ -14,10 +14,12 @@ tags: [Bioinformatics, Deep Learning, Statistics, Data Science]
 <p> Assuming a fair understanding for the subject, let's dive right into a data analysis workflow in Galaxy. This exercise is again derived from the official training available <a href = "https://galaxyproject.github.io/training-material/topics/statistics/tutorials/intro_deep_learning/tutorial.html" > here </a>. </p>
 
 
-<p> Install the repositories- <i> keras_model_config </i>, <i> sklearn_train_test_eval </i>,  and <i> keras_model_builder </i> from the Tool Shed. </p>
+<p> Install the repositories- <i> keras_model_config </i>, <i> sklearn_train_test_eval </i>,  <i> model_prediction </i>, <i> ml_visualization_ex </i>, and <i> keras_model_builder </i> from the Tool Shed. </p>
 
 
 <h2> Loading Data </h2>
+
+<p> The datasets used for this tutorial contain gene expression profiles of humans suffering from two types of cancer - acute myeloid leukemia (AML) and acute lymphoblastic leukemia (ALL). The tutorial aims to differentiate between these two cancer types, predicting a cancer type for each patient, by learning unique patterns in gene expression profiles of patients. The data is divided into 2 parts - one for training and another for prediction. Each part contains two datasets - one has the gene expression profiles and another has labels (the types of cancer). The size of the training data (X_train) is (38, 7129) where 38 is the number of patients and 7129 is the number of genes. The label dataset (y_train) is of size (38, 1) and contains the information of the type of cancer for each patient (label encoding is 0 for ALL and 1 for AML). The test dataset (X_test) is of size (34, 7129) and contains the same genes for 34 different patients. The label dataset for test is y_test and is of size (34, 1). The neural network, which will be formulated in the remaining part of the tutorial, learns on the training data and its labels to create a trained model. The prediction ability of this model is evaluated on the test data (which is unseen during training to get an unbiased estimate of prediction ability). </p>
 
 <p> Let us commence by loading data into a new session. The following could be renamed as <i>X_test</i>, <i>X_train</i>, <i>y_test</i>, and <i>y_train</i> respectively.</p>
 
@@ -100,4 +102,58 @@ Choose these parameters.
     “Dataset containing class labels or target values”: y_train
         “Does the dataset contain header”: Yes
         “Choose how to select data by column”: All columns
+
+
+<p> The above execution produces three outputs- 
+
+<li> <b> model weights </b> on which the training is premised (Binary HDF5 file) </li>
+<li> <b> fitted estimator </b> (ZIP file) </li>
+<li> <b> cross-validation accuracy </b> (<i> tabular </i> file) </li>
+In our run, we achieved an accuracy score of 0.8571428656578064 (~ 85%), which is decent.
+</p>
+
+<h2> Testing Prediction Capacity</h2>
+
+<p> After training the model, we are tempted to examine if the model is able to make acceptable predictions. We shall execute this model on the test data and study the results. We shall apply the <b> Model Prediction </b> tool, with the following paramaters, for the same. </p>
+
+
+    “Choose the dataset containing pipeline/estimator object”: Fitted estimator or estimator skeleton (output of Deep learning training and evaluation tool)
+    “Choose the dataset containing weights for the estimator above”: Weights trained (output of Create deep learning model tool)
+    “Select invocation method”: predict
+    “Select input data type for prediction”: tabular data
+        “Training samples dataset”: X_test
+        “Does the dataset contain header”: Yes
+        “Choose how to select data by column”: All columns
+
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/predictionIP.png">
+</p>
+<br>
+
+<p> The tool returns predicted labels (in a tabular format) for the test data. Note that 0 represents ALL and 1, AML. It is always good to have a visualization of results to make interpretations more intuitive. A great way to infer the prediction results from a ML model is the <a href = "https://en.wikipedia.org/wiki/Confusion_matrix" > <b> confusion matrix </b> </a>, which is a cross-tabulation of the actual and the predicted labels. The tool <b> Machine Learning Visualization Extension </b> helps do that for us. </p> 
+
+<p> The following snapshot of the tool interface highlights all the input parameters. </p>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/forConfusionMatrix.png">
+</p>
+<br>
+
+<p> The confusion matrix shows that 19 and 12 cases were correctly predicted for ALL and AML, by the classifier. In the top-right cell, 1 patient who has ALL is predicted having AML. In the bottom-left cell, 2 patients have AML but are predicted suffering from ALL.  </p>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/confusionMatrixKeras.png">
+</p>
+<br>
+
+
+<h2> References </h2>
+
+<ol>
+<li> Batut et al., 2018 Community-Driven Data Analysis Training for Biology Cell Systems 10.1016/j.cels.2018.05.012  </li>
+</ol>
 
