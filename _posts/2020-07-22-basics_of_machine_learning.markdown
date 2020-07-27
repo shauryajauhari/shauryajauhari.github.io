@@ -63,7 +63,7 @@ tags: [Mathematics, Statistics, Data Science]
 
 <p> Since we are interested in a classification problem, we shall be structuring a ML model or classifier that better represents the patterns in the data and encompasses it's inherent features. The efficiency of the classifier is solely derived from the data it is trained upon and hence it is on the utmost importance to provide <i> clean and comprehensive data </i> to bring out the best. </p>
 
-<p> There are manu flavors of classifiers available out there, but for this exercise, we shall be using the <b> Support Vector Machines (SVMs) </b> to accomplish the task at hand. We will employ the <a href = "https://scikit-learn.org/stable/" > <i>scikit-learn</i> </a> library in python; search for <i><b>sklearn_svm_classifier</b></i> in the repository and install the tool.</p>
+<p> There are manu flavors of classifiers available out there, but for this exercise, we shall be using the <b> Support Vector Machines (SVMs) </b> to accomplish the task at hand. We will employ the <a href = "https://scikit-learn.org/stable/" > <i>scikit-learn</i> </a> library in python; search for <i><b>sklearn_svm_classifier</b></i> in the repository and install the tool. Particularly, we shall be using the <b>Linear Support Vector Classifier (Linear SVC)</b> because of it's effiency over other options. </p>
 
 <h3> Support Vector Machines (SVMs) </h3>
 
@@ -117,6 +117,39 @@ tags: [Mathematics, Statistics, Data Science]
 </ul>
 </p>
 
+<p> The output of the above execution is a <i> zip archive </i> that shall subsequently be used for making predictions on the test data. </p>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/svmOut.png">
+</p>
+<br>
+
+<h2> Making Predicitions </h2>
+
+Make choices for parameters as follows.
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/svmPredictParameters.png">
+</p>
+<br>
+
+The output is a data table with the last column as the predicted class labels.
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/svmPredictions.png">
+</p>
+<br>
+
+
+<span style="color:#800080">
+<p><b>Exercise</b></p>
+<ol>
+<li> Run SVM with C- and Nu- Support Vector Classification profiles for training data and examine the results. </li>
+</ol>
+</span>
 
 
 <h2> References </h2>
