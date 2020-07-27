@@ -26,12 +26,7 @@ tags: [Bioinformatics]
 <li> <b> Features' header </b><i> https://zenodo.org/record/1288429/files/features_header.tabular </i> </li>
 </ol>
 
-P.S. The "Features' header" file is corrupt at the source and might not be workable.
-
-
-
-
-
+P.S. The "Features' header" file is corrupt at the source and might not be workable. We shall choose to omit that file.
 
 
 <h2> References </h2>
