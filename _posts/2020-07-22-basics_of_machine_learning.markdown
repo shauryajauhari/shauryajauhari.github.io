@@ -86,6 +86,39 @@ tags: [Mathematics, Statistics, Data Science]
 </figure>
 <br>
 
+<p> Once installed, we can trace the following screenshots. </p>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/svmInstalled1.png">
+</p>
+<br>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/svmInstalled2.png">
+</p>
+<br>
+
+
+<p> Next, we can proceed with the execution with the following input parameters.
+<ul>
+<li> <i>“Select a Classification Task”</i>: Train a model </li>
+<li> <i>“Classifier type”</i>: Linear Support Vector Classification</li>
+<li> <i>“Select input type”</i>: tabular data</li>
+<li> <i>“Training samples dataset”</i>: breast-w_train</li>
+<li> <i>“Does the dataset contain header” </i>: Yes</li>
+<li> <i>“Choose how to select data by column” </i>: All columns EXCLUDING some by column header name(s)</li>
+<li> <i>“Type header name(s)” </i>: target</li>
+<li> <i>“Dataset containing class labels or target values” </i>: breast-w_train</li>
+<li> <i>“Does the dataset contain header” </i>: Yes</li>
+<li> <i>“Choose how to select data by column” </i>: Select columns by column header name(s)</li>
+<li> <i>“Type header name(s):” </i>: target</li>
+</ul>
+</p>
+
+
+
 <h2> References </h2>
 
 <ol>
