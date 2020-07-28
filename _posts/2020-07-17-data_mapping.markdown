@@ -37,12 +37,12 @@ tags: [ChIP-Seq, DNA Methylation]
 </p>
 <br>
 
-<span style="color:#800080" >
+<font color="#800080" >
 <p><b>Exercise</b></p>
 <ol>
 <li> Run quality control measures as illustrated in the other tutorial on the paried-end reads. </li>
 </ol>
-</span>
+</font>
 
 
 <h2>Mapping data to the <i><b>Reference Genome</b></i></h2>
@@ -136,6 +136,75 @@ tags: [ChIP-Seq, DNA Methylation]
 
 
 <p> These were generic indices. Now for our scenario, we would like to have the bowtie2-indexer installed. It's search term for the tool shed is <i><b> data_manager_bowtie2_index_builder </b></i>. Let's examine if that worked. </p>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/mm10Show.png">
+</p>
+<br>
+
+<p> Sure enough. Next, we move to executing Bowtie2. We shall assume the following paramaters. </p>
+
+
+    “Is this single or paired library”: Paired-end
+        param-file “FASTA/Q file #1”: reads_1
+        param-file “FASTA/Q file #2”: reads_2
+
+        “Do you want to set paired-end options?”: No
+
+        You should have a look at the parameters there, specially the mate orientation if you know it. They can improve the quality of the paired-end mapping.
+    “Will you select a reference genome from your history or use a built-in index?”: Use a built-in genome index
+        “Select reference genome”: Mouse (Mus musculus): mm10
+
+    “Select analysis mode”: Default setting only
+
+    You should have a look at the non default parameters and try to understand them. They can have an impact on the mapping and improving it.
+    “Save the bowtie2 mapping statistics to the history”: Yes
+
+<p> The tool shall output two entities- <b> mapping stats </b> and <b> alignments </b>. </p>
+
+<br>
+<p align="center">
+  <img width="200" height="300" src="/assets/img/bowtie2Results.png">
+</p>
+<br>
+
+<font color="#800080" >
+<p><b>Exercise</b></p>
+<ol>
+<li> Contemplate the <b> Mapping Stats </b> from the output of <b> Bowtie2 </b> results. </li>
+<li> The result from alignment is a <b> Binary Alignment Map (BAM) </b> file. Discuss how is it different from a SAM file and a FASTQ (input) file. </li>
+</ol>
+</font>
+
+
+<p> To take the discussion further, we now install the <i> samtools_stats </i> repository and execute the <b> Samtools stats </b> function to explore the alignment results in a BAM file, i.e. output of Bowtie2. </p>
+
+Use the following instance.
+
+“BAM file”: aligned reads (output of Bowtie2 tool)
+“Use reference sequence”: Locally cached
+
+    “Using genome”: Mouse (Mus musculus): mm10
+
+
+<font color="#800080" >
+<p><b>Exercise</b></p>
+<ol>
+<li> Discuss the results. </li>
+</ol>
+</font>
+
+
+<p> For exploratory analysis, the mapped reads can be graphically visualized via browsers like, <a href = "https://igv.org/" > <b> Integrative Genomics Viewer (IGV) </b> </a> or <a href = "https://jbrowse.org/" > <b> JBrowse </b> </a>. </p>
+
+<font color="#800080" >
+<p><b>Exercise</b></p>
+<ol>
+<li> Plot the output of Bowtie2 on any of these browsers and track the locations <i> chr2:98,666,236-98,667,473 </i>. </li>
+<li> Which one of the browsers do you find more easy to use? </li>
+</ol>
+</font>
 
 
 <h2> References </h2>
