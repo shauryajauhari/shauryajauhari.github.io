@@ -144,12 +144,12 @@ The output is a data table with the last column as the predicted class labels.
 <br>
 
 
-<span style="color:#800080">
+<font color="#800080" >
 <p><b>Exercise</b></p>
 <ol>
 <li> Run SVM with C- and Nu- Support Vector Classification profiles for training data and examine the results. </li>
 </ol>
-</span>
+</font>
 
 
 <h2> References </h2>

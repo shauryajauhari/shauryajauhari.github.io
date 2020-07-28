@@ -70,8 +70,13 @@ If everything goes well, you have the original file with a changed profile.
 </p>
 <br>
 
+<p> With the file attribute changed, we can now move further with executing the tool. The remaining options set to default, we shall indicate the following input paramaters. </p>
 
-
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/IWTomicsInput.png">
+</p>
+<br>
 
 
 <h2> References </h2>
