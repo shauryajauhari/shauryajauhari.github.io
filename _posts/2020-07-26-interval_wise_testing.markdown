@@ -3,7 +3,7 @@ layout: post
 title: Interval-Wise Testing for Omics Data
 date: 2020-07-26 10:20:21 +0230
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: # Add image post (optional)
+img: genomCov.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Bioinformatics]
 ---
