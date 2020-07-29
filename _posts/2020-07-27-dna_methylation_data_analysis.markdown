@@ -31,7 +31,7 @@ tags: [Bioinformatics, Epigenetics]
 
 <h2> Tools </h2>
 
-<p> We shall be ascertaining the quality of the data with <b>FASTQC</b>. A reckoner for the same is available <a href = "https://shauryajauhari.github.io/quality_control/" > here </a>. We shall also be using the <a href = "https://github.com/brentp/bwa-meth" > <b> bwameth </b> </a> for mapping the bisulphite-sequencing data against the reference genome. Also, a tutorial for installation of tools in Galaxy can be found <a href = "https://shauryajauhari.github.io/installing_tools_in_galaxy/" > here </a>. </p> 
+<p> We shall be ascertaining the quality of the data with <b>FASTQC</b>. A reckoner for the same is available <a href = "https://shauryajauhari.github.io/quality_control/" > here </a>. We shall also be using the <a href = "https://github.com/brentp/bwa-meth" > <b> bwameth </b> </a> for mapping the bisulphite-sequencing data against the reference genome. Further we shall use <b> MethylDackel </b>('pileometh' formerly) to elaborate on the methylation status. Also, a tutorial for installation of tools in Galaxy can be found <a href = "https://shauryajauhari.github.io/installing_tools_in_galaxy/" > here </a>. </p> 
 
 
 <p> Let us download the files <i> subset_1.fastq </i> and <i> subset_2.fastq </i> from the link provided above and remove the file extension via renaming. </p>
@@ -51,7 +51,65 @@ tags: [Bioinformatics, Epigenetics]
 </p>
 <br>
 
-<p> Since the genome is manually added to the history, the indicies are not available. The <i>bwameth</i> run will go an extra mile to build indicies first and then complete the alignment task. This certainly takes longer than expected. </p>
+<p align="justify"> Since the genome is manually added to the history, the indicies are not available. The <i>bwameth</i> run will go an extra mile to build indicies first and then complete the alignment task. This certainly takes longer than expected. </p>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/bwamethOut.png">
+</p>
+<br>
+
+<p align="justify"> After the successful execution, an alignment file (BAM) is delivered. We would surely like to explore the methylation features. MethylDackel comes to our rescue here.</p>
+
+Select the options as below, leaving other parameters as-is, and execute the tool.
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/pileomethOptions.png">
+</p>
+<br>
+
+<i>P.S. The alignment file has been renamed to "aligned_subset.bam" and re-loaded to the Galaxy instance. </i>
+<p> The output will be four distinct plots that will depict CpG methylation percentage along the read length. Let us pick up one for the "Original Bottom Strand" for contemplation. </p>
+
+
+<br>
+<p align="center">
+  <img width="200" height= "600" src="/assets/img/pileomethOutput.png">
+</p>
+<br>
+
+<p> The figure shows almost symmetrical curves, with a slight pronounced jitter at the edges. If it is a concern, one could plan on trimming the ends of the reads considering appropriate positions. </p>
+
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/bottomStrandPlot.png">
+</p>
+<br>
+
+<p> For plotting methylation levels, we will use <i> MethylDackel </i> again with the following input parameters. </p>
+
+
+    Choose at the first option Load reference genome from the value: Local cache and for Using reference genome the value: hg38.
+    Select for the option sorted_alignments.bam the computed bam file of step 4 of the bwameth alignment.
+    Use for What do you want to do? the value Extract methylation metrics from an alignment file in BAM/CRAN format.
+    Choose Yes for the option Merge per-Cytosine metrics from CpG and CHG contexts into per-CPG or per-CHG metrics.
+    Set the parameter Extract fractional methylation (only) at each position. This is mutually exclusive with --counts, --logit, and --methylKit to Yes.
+    All other options use the default value.
+
+
+<p> Finally, we have a <i>bedgraph</i> file that we can visualize. </p>
+
+<br>
+<p align="center">
+  <img width="200" height="250" src="/assets/img/pileomethOutputForPlot.png">
+</p>
+<br>
+
+<h2> Visualization </h2>
+
+
 
 <h2> References </h2>
 <ol>
