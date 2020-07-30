@@ -45,19 +45,45 @@ tags: [Bioinformatics, Machine Learning, Data Science]
 
 <h3> Clustering Algorithms </h3>
 
-<p align="justify"> First things first. It is important to base your choice of algorithm on the <b> scale of data </b> at hand. It is common to have millions of data points you'd be working with and a typical algorithm shall compare each datum to the other. This engenders a runtime of <i>  O(n) <sup>2</sup> </i> in complexity notation, obviously bringing in heft to processing and turnaround time. (<i><b>Note:</b> A clustering method called <b> k-means </b> has a runtime complexity of O(n), meaning thereby that it scales linearly with n data points. This is comparatively efficient and we'll discuss that in a while.</i>) There is an array of clustering methods and each one has a master application [1], albeit, we shall focus on the following categories. </p>
+<p align="justify"> First things first. It is important to base your choice of algorithm on the <b> scale of data </b> at hand. It is common to have millions of data points you'd be working with and a typical algorithm shall compare each datum to the other. This engenders a runtime of <i>  O(n) <sup>2</sup> </i> in complexity notation, obviously bringing in heft to processing and turnaround time. (<i><b>Note:</b> A clustering method called <b> k-means </b> has a runtime complexity of O(n), meaning thereby that it scales linearly with n data points. This is comparatively efficient and we'll discuss that in a while.</i>) There is an array of clustering methods and each one has a master application [1], albeit, we shall focus on the following categories; gists of their definitions follow.</p>
 
 <ul>
-<li> Centroid-based </li>
-<li> Density-based </li>
-<li> Distribution-based </li>
-<li> Hierarchical </li>
+<li><b> Centroid-based </b></li>
+<li><b> Density-based </b></li>
+<li><b> Distribution-based </b></li>
+<li><b> Hierarchical </b></li>
 </ul>
 
 
 <h4> Centroid-based Clustering </h4>
 
 <p align="justify"> With a allusion to k-means in the previous paraphrase, it falls under this type of clustering technique. A centroid is purprotedly the <i> epicenter </i> of the data isolates. It is a score that is central to a cluster and holds the other members with it's weight and "gravity"; like the Sun in our solar system. (<i><b>Note:</b> A centroid might not necessarily be an actual data-point.</i>) </p>    
+
+
+<h4> Density-based Clustering </h4>
+
+<p align="justify"> Density-based clusters are <b> vicinal regions of high-density </b>, that are separated by objects of low-density. Basically, the overall data profile is assumed to have dense-regions(clusters) and sparse-regions(noise). Also, other algorithms work well with clusters having a regular,geometric shape; eg. circle, oval, etc. It is a distinct possibility that the real-world data isn't "pretty" enough. That is the starting point of methods like DBSCAN, that handle non-convex groupings and outliers/ noise relatively well. <b> Density-Based Spatial Clustering and Application with Noise (DBSCAN)(Ester et al. 1996) </b> is one such algorithm that we'll be implementing later in this tutorial. The graphic below shows convexed dense-cohorts for illustration, but you get the idea.</p>
+
+<figure>
+<p align="center">
+  <img src="/assets/img/clusteringDensityCentroid.jpg" width="500" alt="" title="">
+</p>
+</figure>
+<br>
+
+<h4> Distribution-based Clustering </h4>
+<p align="justify"> As the name suggests, distribution-based clustering is implemented by bringing together in a cluster, those elements that align to properties of a statistical data distribution, eg. Normal (Gaussian), Chi-Squared, etc. The most popular algorithm in this type of technique is <b> Expectation-Maximization (EM) </b> clustering using <b> Gaussian Mixture Models (GMM) </b>. </p>
+
+<h4> Hierarchical Clustering </h4>
+<p align="justify"> This type of clustering underlines <i> clusters being part of other (super) clusters </i>. The graphic below depicts the same idea. </p>
+
+<figure>
+<p align="center">
+  <img src="/assets/img/hierarchicalClustering.jpg" width="500" alt="" title="">
+</p>
+</figure>
+<br>
+
 
 <h2> References </h2>
 <ol>
