@@ -18,6 +18,28 @@ tags: [Bioinformatics, Machine Learning, Data Science]
 
 <p align="justify"> In India, a dish called <i> Khichdi </i> is fairly popular in the northern provinces. It is basically a mix of lentil and rice, served with yogurt and <i>ghee</i> (fat derived from milk). When it came for an intuition, I couldn't resist the urge to make a mention. If <i>Khichdi</i> could be deemed as raw abundance of data, the individual clumps of lentil and rice are two distinct clusters of this data. This is <i>information</i>; information is processed data. For establishing these clusters, we're choosing grains on the basis of their physical properties (color, shape, etc.). With experimental data, we shall adopt mathematical techniques that help underline these groupings.</p>
 
+
+ <table style="width:80%" align="center">
+  <tr>
+    <th>
+    <figure>
+    <p align="center">
+    <img width="500" height= "200" src="/assets/img/khichdiOne.jpg">
+    <figcaption> <i>Mixture, representing unlabelled elements.</i> </figcaption>
+    </p>
+    </figure>
+    </th>
+    <th>
+    <figure>
+    <p align="center">
+    <img width="500" height= "200" src="/assets/img/khichdiClustered.jpg">
+    <figcaption> <i>Two clusters of lentil and rice.</i> </figcaption>
+    </p>
+    </figure>
+    </th>
+  </tr>
+</table> 
+
 <p><b> Clustering </b> aims to elucidate covert patterns in the unlabelled data and pull the alike closer into a <i>cluster</i>. Such clusters could be formed with the choice of certain <i> similarity measures </i>. There are several options available for such measures that we'll discuss hereafter.</p>
 
 
