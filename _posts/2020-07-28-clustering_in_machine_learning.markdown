@@ -64,6 +64,7 @@ tags: [Bioinformatics, Machine Learning, Data Science]
 
 <p align="justify"> Density-based clusters are <b> vicinal regions of high-density </b>, that are separated by objects of low-density. Basically, the overall data profile is assumed to have dense-regions(clusters) and sparse-regions(noise). Also, other algorithms work well with clusters having a regular,geometric shape; eg. circle, oval, etc. It is a distinct possibility that the real-world data isn't "pretty" enough. That is the starting point of methods like DBSCAN, that handle non-convex groupings and outliers/ noise relatively well. <b> Density-Based Spatial Clustering and Application with Noise (DBSCAN)(Ester et al. 1996) </b> is one such algorithm that we'll be implementing later in this tutorial. The graphic below shows convexed dense-cohorts for illustration, but you get the idea.</p>
 
+<br>
 <figure>
 <p align="center">
   <img src="/assets/img/clusteringDensityCentroid.jpg" width="500" alt="" title="">
@@ -75,14 +76,259 @@ tags: [Bioinformatics, Machine Learning, Data Science]
 <p align="justify"> As the name suggests, distribution-based clustering is implemented by bringing together in a cluster, those elements that align to properties of a statistical data distribution, eg. Normal (Gaussian), Chi-Squared, etc. The most popular algorithm in this type of technique is <b> Expectation-Maximization (EM) </b> clustering using <b> Gaussian Mixture Models (GMM) </b>. </p>
 
 <h4> Hierarchical Clustering </h4>
-<p align="justify"> This type of clustering underlines <i> clusters being part of other (super) clusters </i>. The graphic below depicts the same idea. </p>
+<p align="justify"> This type of clustering underlines <i> clusters being part of other (super) clusters </i>. The graphic below depicts the same idea. In data analysis, a common pratice is to create a <a href = "https://en.wikipedia.org/wiki/Dendrogram" > <b>dendogram</b> </a> to represent hierarchical clusters. </p>
 
+<br>
 <figure>
 <p align="center">
   <img src="/assets/img/hierarchicalClustering.jpg" width="500" alt="" title="">
 </p>
 </figure>
 <br>
+
+<p align="justify"> Also rudimentarily, there are a couple of distance measures that are generally employed to ascertain relative separation of clusters and member elements within a cluster. These are <a href = "https://en.wikipedia.org/wiki/Euclidean_distance" > <i><b> euclidean </b></i> </a> and <a href = "https://en.wiktionary.org/wiki/Manhattan_distance" > <i><b> manhattan </b></i> </a> distances. A euclidean distance, is essentially <i> the square root of the summation of squared differences between the coordinates between two points</i>. Generally found applications use euclidean distance as a clustering measure. </p>
+
+
+<h2> Data </h2>
+
+<p align="justify"> For the current session, we shall employ the acclaimed <a href = "https://en.wikipedia.org/wiki/Iris_flower_data_set" > <b> iris dataset </b></a>. Let us upload the following data to a novel Galaxy session.
+
+<ul>
+<li> <i> https://zenodo.org/record/3813447/files/iris.csv </i></li>
+<li><i> https://zenodo.org/record/3813447/files/circles.csv </i></li>
+<li><i> https://zenodo.org/record/3813447/files/moon.csv </i></li>
+</ul>
+</p>
+
+Rename the datasets to <i>iris</i>, <i>circles</i> and <i>moon</i> respectively. Also, ensure that the datatype for the datasets is <i> comma-separated-value (csv) </i>.
+
+<br>
+<figure>
+<p align="center">
+  <img src="/assets/img/checkAttribute.png" width="240" height="500" alt="" title="">
+</p>
+</figure>
+<br>
+
+Our objective is to group the flowers into similar categories. To do that look for sklearn's repository for the same.
+
+<h2> Tools' Execution </h2>
+
+<h3> Hierarchical Clustering </h3>
+
+<br>
+<figure>
+<p align="center">
+  <img src="/assets/img/installNumericClustering.png" width="500" alt="" title="">
+</p>
+</figure>
+<br>
+
+Make the following choices.
+
+
+    “Select the format of input data”: Tabular Format (tabular,txt)
+        param-file “Data file with numeric values”: iris
+        param-check “Does the dataset contain header”: Yes
+        param-select “Choose how to select data by column”: All columns EXCLUDING some by column header name(s)
+            param-text “Type header name(s)”: Species
+        param-select “Clustering Algorithm”: Hierarchical Agglomerative Clustering
+        In “Advanced options”
+            param-text “Number of clusters”: 2
+            param-select “Affinity”: Euclidean
+            param-select “Linkage”: ward
+
+
+After the successful run, rename the resulting dataset.
+
+<br>
+<figure>
+<p align="center">
+  <img src="/assets/img/renameHierarchicalClustering.png" width="230" height="500" alt="" title="">
+</p>
+</figure>
+<br>
+
+<p align="justify"> Next is the time to visualize the results. We shall use the <b> Scatterplot with ggplot2 </b> tool in the <b> ggplot2_point </b> repository to do this. Understandably, we will be able to see distinct clusters of data, i.e. different categories of flowers. Install and execute the tool with the following options. </p>
+
+
+      “Input tabular dataset”: Hierarchical clustering
+      “Column to plot on x-axis”: 1
+      “Column to plot on y-axis”: 2
+      “Plot title”: Hierarchical clustering in iris data
+      “Label for x axis”: Sepal length
+      “Label for y axis”: Sepal width
+      In “Advanced Options”:
+
+          “Data point options”: User defined point options
+              “relative size of points”: 2.0
+          “Plotting multiple groups”: Plot multiple groups of data on one plot
+              “column differentiating the different groups”: 6
+              “Color schemes to differentiate your groups”: Set 2 - predefined color pallete
+
+      In “Output options”:
+
+          param-text “width of output”: 7.0
+          param-text “height of output”: 5.0
+          param-text “dpi of output”: 175.0
+
+
+
+Visualize the resulting image.
+
+<br>
+<figure>
+<p align="center">
+  <img src="/assets/img/scatterplotOutputIrisHierarchical.png" width="500" alt="" title="">
+</p>
+</figure>
+<br>
+
+<p align="justify"> There are three species listed in the dataset- <i><b> setosa </b></i>, <i><b> versicolor </b></i>, and <i><b> virginica  </b></i>. When you look at the clustering results, you'll see that all the setosa samples are grouped in one cluster and two other species (versicolor and virginica) are grouped in another one. There are two clusters in the figure, and it becomes obvious that versicolor and virginica are more similar to each other, being marked in the same cluster (0: green). (<i><b> Note: </b> 0 and 1 are cluster labels </i>.) </p>
+
+
+<h3> K-means Clustering </h3>
+
+
+<p align="justify"> K-means clustering is a way of partitioning data into 'k' clusters, where k is a defined by the user, aprori. Each of the k-clusters is represented by a central value that is the mean of the data points within that cluster. More information can be found <a href = "https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/k-means-clustering" > here </a>.</p>
+
+
+Moving ahead, we're going to execute the same protocol as above, now with k-means clustering algorithm. Make the following choices with the <i> Numeric Clustering </i> tool again.
+
+    Select the format of input data”: Tabular Format (tabular,txt)
+
+        param-file “Data file with numeric values”: iris
+        param-check “Does the dataset contain header”: Yes
+        param-select “Choose how to select data by column”: All columns EXCLUDING some by column header name(s)
+            param-text “Type header name(s)”: Species
+        param-select “Clustering Algorithm”: KMeans
+        In “Advanced options”
+            param-text “Number of clusters”: 2
+
+
+<p align="justify"> For convenience, we'll rename the results as <i> k-means clustering </i>. Next, same as before, we'll plot the resulting data table with ggplot2. </p>
+
+The paramter readings are as under.
+
+    “Input tabular dataset”: k-means clustering
+    “Column to plot on x-axis”: 1
+    “Column to plot on y-axis”: 2
+    “Plot title”: K-means clustering in iris data
+    “Label for x axis”: Sepal length
+    “Label for y axis”: Sepal width
+    In “Advanced Options”:
+
+        “Data point options”: User defined point options
+            “relative size of points”: 2.0
+        “Plotting multiple groups”: Plot multiple groups of data on one plot
+            “column differentiating the different groups”: 6
+            “Color schemes to differentiate your groups”: Set 2 - predefined color pallete
+
+    In “Output options”:
+
+        param-text “width of output”: 7.0
+        param-text “height of output”: 5.0
+        param-text “dpi of output”: 175.0
+
+
+<br>
+<figure>
+<p align="center">
+  <img src="/assets/img/scatterplotOutputIrisKmeans.png" width="500" alt="" title="">
+</p>
+</figure>
+<br>
+
+
+<font color="#800080" >
+<p><b>Exercise</b></p>
+<ol>
+<li> How to find optimum value for <i>k</i> in k-means clustering? </li> 
+<li> What is the difference between k-means and hierarchical clustering? </li>
+</ol>
+</font>
+
+<h3> DBSCAN Clustering </h3>
+
+Executing the tool.
+
+    Select the format of input data”: Tabular Format (tabular,txt)
+
+        param-file “Data file with numeric values”: iris
+        param-check “Does the dataset contain header”: Yes
+        param-select “Choose how to select data by column”: All columns EXCLUDING some by column header name(s)
+            param-text “Type header name(s)”: Species
+        param-select “Clustering Algorithm”: DBSCAN
+
+
+Visualizing results.
+
+    “Input tabular dataset”: DBSCAN clustering
+    “Column to plot on x-axis”: 1
+    “Column to plot on y-axis”: 2
+    “Plot title”: DBSCAN clustering in iris data
+    “Label for x axis”: Sepal length
+    “Label for y axis”: Sepal width
+    In “Advanced Options”:
+
+        “Data point options”: User defined point options
+            “relative size of points”: 2.0
+        “Plotting multiple groups”: Plot multiple groups of data on one plot
+            “column differentiating the different groups”: 6
+            “Color schemes to differentiate your groups”: Set 2 - predefined color pallete
+
+    In “Output options”:
+
+        param-text “width of output”: 7.0
+        param-text “height of output”: 5.0
+        param-text “dpi of output”: 175.0
+
+
+<br>
+<figure>
+<p align="center">
+  <img src="/assets/img/scatterplotOutputIrisDBSCAN.png" width="500" alt="" title="">
+</p>
+</figure>
+<br>
+
+<p align="justify"> We see that unlike k-means and hierarchical clustering, DBSCAN was able to find all three species. We had pre-specified the number of clusters in the former two executions. </p>
+
+All results together, for perspective.
+
+<table style="width:100%" align="center">
+  <tr>
+    <th>
+    <figure>
+    <p align="center">
+    <img width="500" height= "200" src="/assets/img/scatterplotOutputIrisHierarchical.png">
+    </p>
+    </figure>
+    </th>
+    <th>
+    <figure>
+    <p align="center">
+    <img width="500" height= "200" src="/assets/img/scatterplotOutputIrisKmeans.png">
+    </p>
+    </figure>
+    </th>
+    <th>
+    <figure>
+    <p align="center">
+    <img width="500" height= "200" src="/assets/img/scatterplotOutputIrisDBSCAN.png">
+    </p>
+    </figure>
+    </th>
+  </tr>
+</table> 
+
+<br>
+<font color="#800080" >
+<p><b>Exercise</b></p>
+<ol>
+<li> There is a concept of a <a href = "https://en.wikipedia.org/wiki/Silhouette_(clustering)" > <b>silhouette coefficient</b> </a> to evaluate the clustering results. Can you explore the veracity of these results? </li> 
+</ol>
+</font>
 
 
 <h2> References </h2>
