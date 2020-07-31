@@ -10,10 +10,20 @@ tags: [Bioinformatics, Machine Learning, Data Science]
 
 <h2> Introduction </h2>
 
-<p align="justify"> Regression is a technique, extensively used in Machine Learning domain for <b> predicition of continuous values </b>, as an assignment to the target variable, given a series of independent variables. The model learns the input values from an instance (data-row), for each variable/ feature. A line/ curve (regression line) is then attempted to fit the data that is reminiscent of the overall data scatter/ distribution. There are several flavors to regression technique, eg. linear regression (fitting straight line to the data, with a dependent/ target variable and an independent variable ), multiple regression (series of independent variables and a dependent variable), etc. As can be inferred from the salutation graphic, the better model is the one that is able to accomodate every data point with minimum error, i.e. <b> the true value is as close possible to the predicted value </b>. </p>
+<p align="justify"> Regression is a technique, extensively used in Machine Learning domain for <b> predicition of continuous values </b>, as an assignment to the target variable, given a series of independent variables. The model learns the input values from an instance (data-row), for each variable/ feature. A line/ curve (regression line) is then attempted to fit the data that is reminiscent of the overall data scatter/ distribution. There are several flavors to regression technique, eg. simple linear regression (fitting straight line to the data, with a dependent/ target variable and an independent variable ), multiple linear regression (series of independent variables and a dependent variable), etc. As can be inferred from the salutation graphic, the better model is the one that is able to accomodate every data point with minimum error, i.e. <b> the true value is as close possible to the predicted value </b>. </p>
+
+<p align="justify"> Let us recall the attributes of a line from the annals of geometry. A line could be strcutured with a <i> slope </i> and an<i> intercept </i>. These values can be realized as pictured below. Assume a data-point lying in a virtual line; and then there is the regression line. Intuitively, if the equations of both lines are same, then it's a perfect match. </p>
+
+<figure>
+<p align="center">
+<img width="600" height= "400" src="/assets/img/lineEquation.jpg">
+</p>
+</figure>
+
+<p align="justify"> Let us recall the attributes of a line from the annals of geometry. The slope and intercept are the purported coefficients of the equation of a regression line, as for a regular line.  </p>
 
 
-<p align="justify"> The case study we use in this exercise is that of <i> age prediction </i>. A <a href = "https://www.sciencedirect.com/science/article/pii/S1872497317301643?via%3Dihub" > study </a> is referred where the DNA methylation profiles were analyzed to predict age of the individuals. This is premised over the dogma that the methylation patterns are dynamic and variable to the age. The CpG sites with the highest correlation to age are selected as the biomarkers (and therefore features for building a regression model). </p>
+<p align="justify"> The case study we use in this exercise is that of <i> age prediction </i>. An <a href = "https://www.sciencedirect.com/science/article/pii/S1872497317301643?via%3Dihub" > exegesis </a> is referred where the DNA methylation profiles were analyzed to predict age of the individuals. This is premised over the dogma that the methylation patterns are dynamic and variable to the age. The CpG sites with the highest correlation to age are selected as the biomarkers (and therefore features for building a regression model). </p>
 
 <h2> References </h2>
 <ol>
