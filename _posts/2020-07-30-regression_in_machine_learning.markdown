@@ -10,7 +10,7 @@ tags: [Bioinformatics, Machine Learning, Data Science]
 
 <h2> Introduction </h2>
 
-<p align="justify"> Regression is a technique, extensively used in Machine Learning domain for <b> predicition of continuous values </b>, as an assignment to the target variable, given a series of independent variables. The model learns the input values from an instance (data-row), for each variable/ feature. A line/ curve (regression line) is then attempted to fit the data that is reminiscent of the overall data scatter/ distribution. There are several flavors to regression technique, eg. simple linear regression (fitting straight line to the data, with a dependent/ target variable and an independent variable ), multiple linear regression (series of independent variables and a dependent variable), etc. As can be inferred from the salutation graphic, the better model is the one that is able to accomodate every data point with minimum error, i.e. <b> the true value is as close possible to the predicted value </b>. </p>
+<p align="justify"> Regression is a technique, extensively used in Machine Learning domain for <b> predicition of continuous values </b>, as an assignment to the target variable, given a series of independent variables. The model learns the input values from an instance (data-row), for each variable/ feature. A line/ curve (regression line) is then attempted to fit the data that is reminiscent of the overall data scatter/ distribution. There are several flavors to regression technique, eg. simple linear regression (fitting straight line to the data, with a dependent/ target variable and an independent variable ), multiple linear regression (series of independent variables and a dependent variable), etc. As can be inferred from the salutation graphic, the better model is the one that is able to accomodate every data point with minimum error, i.e. <b> the true value is as close possible to the predicted value</b>. </p>
 
 <p align="justify"> Let us recall the attributes of a line from the annals of geometry. A line could be strcutured with a <i> slope </i> and an<i> intercept </i>. These values can be realized as pictured below. Assume a data-point lying in a virtual line; and then there is the regression line. Intuitively, if the equations of both lines are same, then it's a perfect match. </p>
 
@@ -20,10 +20,16 @@ tags: [Bioinformatics, Machine Learning, Data Science]
 </p>
 </figure>
 
-<p align="justify"> Let us recall the attributes of a line from the annals of geometry. The slope and intercept are the purported coefficients of the equation of a regression line, as for a regular line.  </p>
+<p align="justify"> The slope and intercept are the purported coefficients to the equation of a regression line, as for a regular line. If the slope is constant, the only difference between these two lines is that of <i> intercept </i>, meaning thereby that the lines are parallel. In technical terms, this error (difference between actual and predicted value) for all data-points is gauged and optimized using a <b>cost function</b>; cost is the error incurred in prediciting values. The cost function is typically the <b>Mean Squared Error (MSE)</b> or the <a href = "https://www.wikihow.com/Calculate-the-Sum-of-Squares-for-Error-(SSE)" > <b>Sum of Squared Error (SSE)</b> </a>. </p>
 
 
 <p align="justify"> The case study we use in this exercise is that of <i> age prediction </i>. An <a href = "https://www.sciencedirect.com/science/article/pii/S1872497317301643?via%3Dihub" > exegesis </a> is referred where the DNA methylation profiles were analyzed to predict age of the individuals. This is premised over the dogma that the methylation patterns are dynamic and variable to the age. The CpG sites with the highest correlation to age are selected as the biomarkers (and therefore features for building a regression model). </p>
+
+Let us move to the hands-on now. First, we will fetch the testing and training datasets.
+
+<h2> Data </h2>
+
+<p align="justify"> Whole blood samples are collected from humans with their ages falling in the range 18-69 and the best age-correlated CpG sites in the genome are chosen as features. </p>
 
 <h2> References </h2>
 <ol>
