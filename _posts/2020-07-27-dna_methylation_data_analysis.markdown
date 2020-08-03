@@ -90,14 +90,15 @@ Select the options as below, leaving other parameters as-is, and execute the too
 
 <p> For plotting methylation levels, we will use <i> MethylDackel </i> again with the following input parameters. </p>
 
-
-    Choose at the first option Load reference genome from the value: Local cache and for Using reference genome the value: hg38.
-    Select for the option sorted_alignments.bam the computed bam file of step 4 of the bwameth alignment.
-    Use for What do you want to do? the value Extract methylation metrics from an alignment file in BAM/CRAN format.
-    Choose Yes for the option Merge per-Cytosine metrics from CpG and CHG contexts into per-CPG or per-CHG metrics.
-    Set the parameter Extract fractional methylation (only) at each position. This is mutually exclusive with --counts, --logit, and --methylKit to Yes.
-    All other options use the default value.
-
+<ul>
+<li><i>Load reference genome:</i> <b> Local cache </b></li>
+<li><i>Using reference genome: </i> <b> hg38</b></li>
+<li><i>sorted_alignments.bam:</i> <b>the computed bam file of step 4 of the bwameth alignment.</b></li>
+<li><i>What do you want to do?:</i> <b>Extract methylation metrics from an alignment file in BAM/CRAN format.</b></li>
+<li><i>Merge per-Cytosine metrics from CpG and CHG contexts into per-CPG or per-CHG metrics :</i> <b>Yes</b></li>
+<li><i>Extract fractional methylation (only) at each position. This is mutually exclusive with --counts, --logit, and --methylKit :</i> <b>Yes</b></li>
+<li><i>All other options use the default value.</i></li>
+</ul>
 
 <p> Finally, we have a <i>bedgraph</i> file that we can visualize. </p>
 
@@ -109,7 +110,59 @@ Select the options as below, leaving other parameters as-is, and execute the too
 
 <h2> Visualization </h2>
 
+<p align="justify"> Here, we are going to visualize methylation profiles around all <i> Transcription Start-Sites (TSS)</i> of our data. (<b>Note:</b> DNA methylation at gene promoters usually represses the gene functioning). Please be watchful that the previous output might not be reflected as the input to the next tool we're going to use. To ensure it does, change the attributes of the file to match- first, the datatype being <b>bedgraph</b>, and second, the database/ build being <b> Human Dec. 2013 (GRCh38/hg38) (hg38) </b>. To proceed install the tool <b> Wig/BedGraph-to-bigWig converter </b> from the repository <b> ucsc-wigtobigwig </b> and convert the <i>bedgraph</i> format to <i>bigwig</i>. </p>
 
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/changeAttributes.png">
+</p>
+<br>
+
+<p align="justify"> Next, we shall load the file <i>CpGIslands.bed</i> from the <a href= "https://zenodo.org/record/557099"> source </a> and install <b> deeptools_compute_matrix </b> and <b> deeptools_plot_profile </b>. Use the following values for parameters and leave the rest as default. <b><i>(P.S. The indexing of files might be inconsistent, as shown in the screenshots, as local and main Galaxy instances were used interchangeably as per accessibility.)</i></b> </p>
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/computeMatrixOptions.png">
+</p>
+<br>
+
+Next, 
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/plotProfileOptions.png">
+</p>
+<br>
+
+
+The final output looks like this. Note that the buffer regions of 1Kb on either side of the TSS can be manipulated as per the requirement.
+
+<br>
+<p align="center">
+  <img width="500" src="/assets/img/plotProfileOutput.png">
+</p>
+<br>
+
+<br>
+<font color="#800080" >
+<p><b>Exercise</b></p>
+<ol>
+<li> There are several other <i>bedgraph</i> files available <a href= "https://zenodo.org/record/557099"> here </a>. Choose anyone and repeat the same protocol of visualization. Analyze the results. </li> 
+</ol>
+</font>
+
+
+<h2> Differentially Methylated Regions </h2>
+
+<p align="justify"> Another flavor of this analysis, and arguably more purposeful, is the elicitation of differentially methylated regions, that could possibly map the variegated methylation states. For the same, we shall use the tool <b> metilene </b>. More information on the tool is available <a href = "https://www.bioinf.uni-leipzig.de/Software/metilene/" > here </a>.</p>
+
+<p> Install the said tool from the <a href = " https://toolshed.g2.bx.psu.edu/" > tool shed </a>, download the following files from the repository mentioned previously, and upload them to the local Galaxy instance.
+<ul>
+<li> <i> NB1_CpG.meth.bedGraph </i> </li>
+<li> <i> NB2_CpG.meth.bedGraph </i> </li>
+<li> <i> BT198_CpG.meth.bedGraph </i> </li>
+</ul>
+</p>
 
 <h2> References </h2>
 <ol>
