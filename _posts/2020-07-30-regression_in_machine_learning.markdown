@@ -128,6 +128,105 @@ Execute the same tool as above, with the choices as depicted in the screenshot b
 <br>
 
 
+<h2> Using Ensemble Methods </h2>
+
+<p align="justify"> Frequently, a single model is a feeble exposition of the data. It is always advisable to work with multiple instances of a model (learner with varying supplements of choice of data-instances, parameters, partitioning, tuning convergence, etc.) and lionize the aggregation of results. A linear regression might not always be the best fit for the data. What if the spread is more concave or convex? </p>
+
+
+<p align="justify"> To exemplify, a <a href = "https://nbviewer.jupyter.org/github/shauryajauhari/MachineLearning/blob/master/Machine_Learning_Random_Forests/hands_on_random_forests_ep.ipynb" > <b>Random Forest</b> </a> algorithm is a better choice than a <a href = "https://nbviewer.jupyter.org/github/shauryajauhari/MachineLearning/blob/master/Machine_Learning_Random_Forests/hands_on_random_forests_ep.ipynb" > <b>Decision Tree</b> </a>. Why? Because <i>multiple trees consistute a forest</i>, and aggregation of many decision trees converges into the output of a random forest. It is an ensemble based classifier and always preferable to employ. Machine Learning is always about the intricacies of statistics (working with sample data to train and test), and so to maximize our chances of a win, it must be ensured that randomness has been cornered as far possible.</p>
+
+<p align="justify"> To work with ensemble methods, we shall load the tool <b> Ensemble methods <i>for classification and regression</i> </b> from the repository <b>sklearn_ensemble</b>. We shall be using <a href = "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" > <b>Gradient Boosting regressor </b> </a>. Make the choices for the paramaters as pictured below.</p>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/gradientBoosterOptions.png">
+</p>
+</figure>
+<br>
+
+<p align="justify"> After training, let's examine the performance of the model on the test data. Prior though, rename the model to <i>gradient_boosting_model</i>. For testing, the parameters could be chosen like below.</p>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/gradientBoosterTest.png">
+</p>
+</figure>
+<br>
+
+<p align="justify"> Again, rename the results to <i>predicted_data_gradient_boosting</i>. Now, load the tool <b> Plot actual vs predicted curves and residual plots</b> from the repository <b>plotly_regression_performance_plots</b>.</p>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/plotActualPredictedOptions.png">
+</p>
+</figure>
+<br>
+
+Let's visualize the results. The justification of the results could be reciprocated from the explanations above.
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/ensembleActualPredictedPlot.png">
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/ensembleResidualPlot.png">
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/ensembleScatterPlot.png">
+</p>
+</figure>
+<br>
+
+
+
+<h2> Creating Data Processing Pipeline </h2>
+
+To further our analysis, we shall install a tool <i>Pipeline Builder</i> first.
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/pipelineBuilderInstall.png">
+</p>
+</figure>
+<br>
+
+After installation, let us execute the tool with the results we have.
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/pipelineBuilderOptions.png">
+</p>
+</figure>
+<br>
+
+<p align="justify"> The output is rudimentarily a <i>wrapper</i> that encapsulates this ensemble leaner. The paramaters choosen for this model shall be engendered in a seperate archive. Likewise, we can extend the same pipeline for any other <i>optimum</i> set of arguments. For that we need another tool called <i> Hyperparamater search </i>. We will install it too. </p>  
+
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/hyperparameterSearchInstall.png">
+</p>
+</figure>
+<br>
 
 <h2> References </h2>
 <ol>
