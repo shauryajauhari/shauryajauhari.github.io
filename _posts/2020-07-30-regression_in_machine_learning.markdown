@@ -228,6 +228,77 @@ After installation, let us execute the tool with the results we have.
 </figure>
 <br>
 
+<h3> Hyperparameter Search </h3>
+
+<p align="justify"> After creating a pipeline builder, we will use  the tool <i> Hyperparameter search </i> to trace the best values for each hyperparameter, so as to establish an optimum model based on the search space chosen for each hyperparameter. We use only one parameter <i>n_estimators</i> of Gradient boosting regressor for this task. This parameter specifies the number of boosting stages the learning process has to go through. The default value of <i>n_estimators</i> for this regressor is 100. However, we are not sure if this gives the best accuracy. Therefore, it is important to try setting this parameter to different values to find the optimal one. We choose some values which are less than 100 and a few more than 100. The hyperparameter search will look for the optimal number of estimators and gives the best-trained model as one of the outputs. This model is used in the next step to predict age in the test dataset. </p>
+
+Install the tool and make the following choices.
+
+<ul>
+<li><i>“Select a model selection search scheme”</i>: <b>GridSearchCV - Exhaustive search over specified parameter values for an estimator</b></li>
+<li><i>param-files “Choose the dataset containing pipeline/estimator object”</i>: <b>zipped file (output of Pipeline builder tool)</b></li>
+<li><i>“Is the estimator a deep learning model?”</i>: <b>No</b></li>
+- In “Search parameters Builder”:
+<li><i>param-files “Choose the dataset containing parameter names”</i>: <b>tabular file (the other output of Pipeline builder tool)</b></li>
+- In “Parameter settings for search”:
+<li><i>param-repeat “1: Parameter settings for search”</i></li>
+<li><i>“Choose a parameter name (with current value)”</i>: <b>n_estimators: 100</b></li>
+<li><i>“Search list”</i>: <b>[25, 50, 75, 100, 200]</b></li>
+- In “Advanced Options for SearchCV”:
+<li><i>“Select the primary metric (scoring)”</i>: <b>Regression -- 'r2'</b></li>
+<li><i>“Select the cv splitter”</i>: <b>KFold</b></li>
+</ul>
+
+<p align="justify"> There are different ways to split the dataset into training and validation sets. In our tutorial, we will use KFold which splits the dataset into K consecutive parts. It is used for cross-validation. It is set to 5 using another parameter n_splits. </p>
+
+<ul>
+<li><i>“n_splits”</i>:<b>5</b></li>
+<li><i>“Whether to shuffle data before splitting”</i>: Yes</b></li>
+<li><i>“Random seed number”</i> :<b>3111696</b></li>                        
+</ul>
+
+<p align="justify"> It is set to an integer and used to retain the randomness/accuracy when “Whether to shuffle data before splitting” is Yes across successive experiments. </p>
+
+<ul>
+<li><i>“Raise fit error”</i>:<b>No</b></li>
+</ul>
+
+<p align="justify"> While setting different values for a parameter during hyperparameter search, it can happen that wrong values are set, which may generate an error. To avoid stopping the execution of a regressor, it is set to No which means even if a wrong parameter value is encountered, the regressor does not stop running and simply skips that value. </p>
+
+<ul>
+<li><i>“Select input type”</i>: <b> tabular data</b></li>
+<li><i>param-files “Training samples dataset”</i>: <b> train_rows tabular file</b></li>
+<li><i>“Does the dataset contain header”</i>: <b> Yes</b></li>
+<li><i>“Choose how to select data by column”</i>: <b> All columns EXCLUDING some by column header name(s)</b></li>
+<li><i>“Type header name(s)”</i>: <b> Age</b></li>
+<li><i>param-files “Dataset containing class labels or target values”</i>: <b> train_rows tabular file</b></li>
+<li><i>“Does the dataset contain header”</i>: <b> Yes</b></li>
+<li><i>“Choose how to select data by column”</i>: <b> Select columns by column header name(s)</b></li>
+<li><i>“Type header name(s)”</i>: <b> Age</b></li>
+<li><i>“Whether to hold a portion of samples for test exclusively?”</i>: <b> Nope</b></li>
+<li><i>“Save best estimator?”</i>: <b>Fitted best estimator or Detailed cv_results_ from nested CV</b></li>
+</ul>
+
+<font color="#800080" >
+<p><b>Exercise</b></p>
+<ol>
+<li> The run will engender two outputs. Analyze the <i>tabular</i> output and ascertain the optimum number of estimators for the gradient boosting regressor.</li>
+</ol>
+</font>
+
+
+<p align="justify"> The other output from the run of Hyperparameter search (zipped file) is the optimized model. Now, to predict the age, we shall execute this model, for probably improvised results. </p>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/hyperparameterSearchReRun.png">
+</p>
+</figure>
+<br>
+
+Next, we shall plot the results again and compare with the existing ones. (<i><b>Note:</b> The metric R2 is better when closer to 1.0</i>) .
+
 <h2> References </h2>
 <ol>
 <li> Alireza Khanteymoori, Anup Kumar, Simon Bray, 2020 Regression in Machine Learning (Galaxy Training Materials). /training-material/topics/statistics/tutorials/regression_machinelearning/tutorial.html Online; accessed Fri Jul 31 2020  </li>
