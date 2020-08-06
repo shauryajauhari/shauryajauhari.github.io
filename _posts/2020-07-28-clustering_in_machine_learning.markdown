@@ -331,6 +331,109 @@ All results together, for perspective.
 </font>
 
 
+<h2> Applying Clustering on Multiple Datasets </h2>
+<h3> Data Visualization </h3>
+
+<p align="justify">Just like before, the regression analysis can be scaled to multiple datasets taken simultaneously. Let us include the "moon" and "circles" datasets (imported before) for this module. </p>
+
+<br>
+<figure>
+<p align="center">
+  <img src="/assets/img/multipleDatasetsScatterPlot.png" width="500" alt="" title="">
+</p>
+</figure>
+<br>
+
+<table style="width:80%" align="center">
+  <tr>
+    <th>
+    <figure>
+    <p align="center">
+    <img width="500" height= "200" src="/assets/img/moonScatterPlot.png">
+    <figcaption> <i>Scatter plot for <b>moon</b> dataset.</i> </figcaption>
+    </p>
+    </figure>
+    </th>
+    <th>
+    <figure>
+    <p align="center">
+    <img width="500" height= "200" src="/assets/img/circlesScatterPlot.png">
+    <figcaption> <i>Scatter plot for <b>circles</b> dataset.</i> </figcaption>
+    </p>
+    </figure>
+    </th>
+  </tr>
+</table> 
+
+
+<h3> Cluster Data Visualization </h3>
+
+<p align="justify"> We'l resort back to the <b>Numeric clustering</b> tool and process the algorithm with the parameters defined in the following screenshot. </p>
+
+<br>
+<figure>
+<p align="center">
+  <img src="/assets/img/numericClusteringMultipleDatasets.png" width="700" alt="" title="">
+</p>
+</figure>
+<br>
+
+Again, we visualize these results.
+
+<ul>
+<li><i>“Input tabular dataset”</i> : <b>Numeric Clustering on circles</b> and <b>Numerical Clustering on moon</b> as <i>multiple datasets</i></li>
+<li><i>“Column to plot on x-axis”</i> : <b>1</b></li>
+<li><i>“Column to plot on y-axis”</i> : <b>2</b></li>
+<li><i>“Plot title”</i> : <b>Hierarchical clustering</b></li>
+<li><i>“Label for x axis”</i> : <b>X</b></li>
+<li><i>“Label for y axis”</i> : <b>Y</b></li>
+- In “Advanced Options”:
+<li><i>“Data point options”</i> : <b>User defined point options</b></li>
+<li><i>“relative size of points”</i> : <b>2.0</b></li>
+<li><i>“Plotting multiple groups”</i> : <b>Plot multiple groups of data on one plot</b></li>
+<li><i>“column differentiating the different groups”</i> : <b>3</b></li>
+<li><i>“Color schemes to differentiate your groups”</i> : <b>Set 2 - predefined color pallete</b></li>
+- In “Output options”:
+<li><i>“width of output”</i> : <b>7.0</b></li>
+<li><i>“height of output”</i> : <b>5.0</b></li>
+<li><i>“dpi of output”</i> : <b>175.0</b></li>
+</ul>
+
+<table style="width:80%" align="center">
+  <tr>
+    <th>
+    <figure>
+    <p align="center">
+    <img width="500" height= "200" src="/assets/img/moonScatterPlotFinal.png">
+    <figcaption> <i>Scatter plot for <b>moon</b> dataset.</i> </figcaption>
+    </p>
+    </figure>
+    </th>
+    <th>
+    <figure>
+    <p align="center">
+    <img width="500" height= "200" src="/assets/img/circlesScatterPlotFinal.png">
+    <figcaption> <i>Scatter plot for <b>circles</b> dataset.</i> </figcaption>
+    </p>
+    </figure>
+    </th>
+  </tr>
+</table> 
+
+<br>
+<font color="#800080" >
+<p><b>Exercise</b></p>
+<ol>
+<li> You can apply the other two algorithms (k-means and DBSCAN) to moon and circles datasets in the same way as explained above. In the k-means algorithm, please use <b>k=2</b> and for the DBSCAN algorithm, the parameters should not be the default ones as used earlier. They should be set as follows: 
+<ul>
+<li> for the circles dataset (<b>maximum neighborhood distance=0.2</b> and <b>minimal core point density=5</b>), and </li> 
+<li> for the moon dataset (<b>maximum neighborhood distance=0.3</b> and <b>minimal core point density=4</b>). </li>
+</ul>
+</li> 
+</ol>
+</font>
+
+
 <h2> References </h2>
 <ol>
 <li> Xu, D., Tian, Y. A Comprehensive Survey of Clustering Algorithms. Ann. Data. Sci. 2, 165–193 (2015). https://doi.org/10.1007/s40745-015-0040-1 </li>
