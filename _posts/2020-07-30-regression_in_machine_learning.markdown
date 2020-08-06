@@ -299,6 +299,47 @@ Install the tool and make the following choices.
 
 Next, we shall plot the results again and compare with the existing ones. (<i><b>Note:</b> The metric R2 is better when closer to 1.0</i>) .
 
+
+<h3> Regression Plots </h3>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/finalRegressionPlotStatus.png">
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/regressionActualPredictedFinal.png">
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/regressionResidualPredictedFinal.png">
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/regressionScatterPlotFinal.png">
+</p>
+</figure>
+<br>
+
+<p align="justify">The interpretation for the former two plots has to be made visually, but the latter one highlights <b>RMSE</b> and <b>R2</b> values that are crispier than before. This is definitely a better version.</p>
+
+
 <h2> References </h2>
 <ol>
 <li> Alireza Khanteymoori, Anup Kumar, Simon Bray, 2020 Regression in Machine Learning (Galaxy Training Materials). /training-material/topics/statistics/tutorials/regression_machinelearning/tutorial.html Online; accessed Fri Jul 31 2020  </li>
