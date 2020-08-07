@@ -164,6 +164,15 @@ The final output looks like this. Note that the buffer regions of 1Kb on either 
 </ul>
 </p>
 
+<p align="justify"><i> <b>Note:</b> Make sure that these files have appropriate datatypes, else the tool will not recognize them. </i></p>
+
+<br>
+<p align="center">
+  <img width="900" src="/assets/img/metileneOptions.png">
+</p>
+<br>
+
+
 <h2> References </h2>
 <ol>
 <li> Lin, I.-H., D.-T. Chen, Y.-F. Chang, Y.-L. Lee, C.-H. Su et al., 2015 Hierarchical Clustering of Breast Cancer Methylomes Revealed Differentially Methylated and Expressed Breast Cancer Genes (O. El-Maarri, Ed.). PLOS ONE 10: e0118453. 10.1371/journal.pone.0118453 </li>
