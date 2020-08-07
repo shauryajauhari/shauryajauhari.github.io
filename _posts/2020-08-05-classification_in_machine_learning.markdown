@@ -122,10 +122,315 @@ Let us view the results.
 <figure>
 <p align="left">
 <img width="750" height="500" src="/assets/img/confusionMatrixClassification.png">
-<figcaption><b>Figure 3: Confusion Matrix</b> <i> It is a table of 2 rows and 2 columns, summarizing the classification results with respect to the test data, in terms of True Positives, True Negatives, False Positives, and False Negatives.</i> </figcaption>
+<figcaption><b>Figure 3: Confusion Matrix</b> <i> It is a table of 2 rows and 2 columns, summarizing the classification results with respect to the test data, in terms of True Positives, True Negatives, False Positives, and False Negatives. P.S. The comparison is between actual and predicted values; one could either, but not both.</i> </figcaption>
 </p>
 </figure>
 <br>
+
+
+<h2> K-Nearest Neighbor (KNN) Classifier </h2>
+
+<p align="justify"> In this classification scheme, <b>a data sample is assigned to the class that is most common to its neighbors</b>, the variable <i>k</i> defines the number of nearest neighbors to look out for. This value is critical and while a small <i>k</i> could induce a lot of noise, a larger <i>k</i> might well contain points from other classes and engender erroneous classification. A prefered way is to run the classifier with varying <i>k</i> and then choose the model with optimum error. </p>
+
+<p align="justify">To run this algorithm in Galaxy, we'll install the tool <b>Nearest Neighbors Classification</b> from the repository <i><b>sklearn_nn_classifier</b></i>. As you would find out, the classifier was trained with <i>k = 5</i>, which is the default value.</p> 
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/nearestNeighborClassifierOptions.png">
+</p>
+</figure>
+<br>
+
+<p align="justify"> With the model in place now, let us use it for the test data and gauge it's potency. </p>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/nearestNeighborTest.png">
+</p>
+</figure>
+<br>
+
+<h3> Visualizing Results </h3>
+
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/plotNearestNeighborOptions.png">
+</p>
+</figure>
+<br>
+
+Subsequently.
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/precisionRecallFNearestNeighbor.png">
+<figcaption><b>Figure 1: Precision, recall and F1 score</b></figcaption>
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/rocAUCNearestNeighbor.png">
+<figcaption><b>Figure 2: Receiver Operator Characteristics (ROC) and Area Under ROC (AUC)</b></figcaption>
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/confusionMatrixNearestNeighbor.png">
+<figcaption><b>Figure 3: Confusion Matrix</b></figcaption>
+</p>
+</figure>
+<br>
+
+<p align="justify"> As you would note, the accuracy of this classifier (AUC = 0.95) is tad better than the logistic regression model (AUC = 0.94).</p>
+
+
+
+<h2> Support Vector Machines (SVMs) </h2>
+
+<p align="justify"> A primer for this classification scheme is available <a href = "https://shauryajauhari.github.io/basics_of_machine_learning/" > here </a>. Let us dive right into the application.</p>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/svmOptions.png">
+</p>
+</figure>
+<br>
+
+<p align="justify"> The SVM model learns the coefficients of the hyperplane with the maximal margin in the kernel space, between classes. Let us apply the model on test data and then visualize the results.</p>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/svmTest.png">
+</p>
+</figure>
+<br>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/svmResults.png">
+</p>
+</figure>
+<br>
+
+Again,
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/precisionRecallFSVM.png">
+<figcaption><b>Figure 1: Precision, recall and F1 score</b></figcaption>
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/rocAUCSVM.png">
+<figcaption><b>Figure 2: Receiver Operator Characteristics (ROC) and Area Under ROC (AUC)</b></figcaption>
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/confusionMatrixSVM.png">
+<figcaption><b>Figure 3: Confusion Matrix</b></figcaption>
+</p>
+</figure>
+<br>
+
+
+<h2> Random Forest </h2>
+
+<p align="justify"> An ensemble of decision trees, this classifier improvises the overall results by aggregating results from a multitude of learning models. It is a "boosting and bagging" methodology that iteratively minimizes error. See this <a href = "https://rpubs.com/shauryajauhari/decision_trees_random_forests" > presentation </a> for reference. The problem of <i>overfitting</i> is least likely in an ensemble method as it generalizes well, being trained on several instances of the data. </p>
+
+
+<h3> Building Model </h3>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/randomForestOptions.png">
+</p>
+</figure>
+<br>
+
+
+<h3> Application on Test Data </h3>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/randomForestTest.png">
+</p>
+</figure>
+<br>
+
+
+<h3> Visualizing Results </h3>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/randomForestResults.png">
+</p>
+</figure>
+<br>
+
+Finally, 
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/precisionRecallFRandomForest.png">
+<figcaption><b>Figure 1: Precision, recall and F1 score</b></figcaption>
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/rocAUCRandomForest.png">
+<figcaption><b>Figure 2: Receiver Operator Characteristics (ROC) and Area Under ROC (AUC)</b></figcaption>
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/confusionMatrixRandomForest.png">
+<figcaption><b>Figure 3: Confusion Matrix</b></figcaption>
+</p>
+</figure>
+<br>
+
+
+The results are perfect. The AUC = 1.0 indicates absolutely no error. 
+
+
+<h2> Creating a Data Processing Pipeline | Ensemble Classifier </h2>
+
+<h3> Pipeline Builder </h3>
+
+<p align="justify"> We need a list of hyperparameters of the estimators. This is the output of pipeline builder that shall eventually be fed to the <i>Hyperparameter search</i> tool. However, we shall particularly focus on the constraint, <i>n_estimators</i>, as this defines the number of stages for the "bagging" operation. As we know, "bagging" allows for aggregation of results for a concensus. In addition, it must be examined that this value is neither too high (as we'll be making unnecessary expenditure on processing and time), neither too low (so that the accuracy is hampered). The <i>Hyperparameter search</i> tool gives us just the optimal number we need. <i>(<b>Note:</b> The default value of n_estimators for this regressor is 10)</i></p>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/pipelineBuilderEnsembleOptions.png">
+</p>
+</figure>
+<br>
+
+<h3> Hyperparameter Search </h3>
+
+Try the following choices.
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/hyperparameterSearchOptions1.png">
+</p>
+</figure>
+<br>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/hyperparameterSearchOptions2.png">
+</p>
+</figure>
+<br>
+
+<p align="justify"> This run results in two files; the model (zip file) and the hyperparameter values (tabular file). Have a look at the tabular file. </p>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/hyperparameterSearchResult.png">
+</p>
+</figure>
+<br>
+
+<p align="justify"> The column <i>mean_test_score</i> gives the accuracy for the model, corresponding to the given parameter value. So, although the default value is 10, yet 50 gives us a better model. That is exactly why it is important to tune the model in accord to these parameters to give us the optima. Agin, we'll make the prediction with the new model. </p>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/hyperparameterSearchModelRun.png">
+</p>
+</figure>
+<br>
+
+<h3> Visualization of Results </h3>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" src="/assets/img/hyperparameterSearchResultsPlot.png">
+</p>
+</figure>
+<br>
+
+Pulling the plots,
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/precisionRecallFHyperparameterSearch.png">
+<figcaption><b>Figure 1: Precision, recall and F1 score</b></figcaption>
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/rocAUCHyperparameterSearch.png">
+<figcaption><b>Figure 2: Receiver Operator Characteristics (ROC) and Area Under ROC (AUC)</b></figcaption>
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="left">
+<img width="750" height="500" src="/assets/img/confusionMatrixHyperparameterSearch.png">
+<figcaption><b>Figure 3: Confusion Matrix</b></figcaption>
+</p>
+</figure>
+<br>
+
+
+<p align="justify"> So, we can see that the ensemble methods have a high quality prediction on deciphering whether or not a chemical substance is biodegradable. Surely, the mix of flavors in data brings about all the magic and the classifier is able to perform noticeably better than the isolate models.</p>
 
 
 
