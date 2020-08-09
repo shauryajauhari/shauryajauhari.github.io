@@ -1,0 +1,44 @@
+---
+layout: post
+title: Infinium Human Methylation BeadChip
+date: 2020-08-08 13:20:21 +0230
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: # Add image post (optional)
+fig-caption: # Add figcaption (optional)
+tags: [Bioinformatics, Epigenetics]
+---
+
+
+<h2> Introduction </h2>
+
+<p align="justify"> From the vantage point of <i>epigenetics</i>, there is significant evidence that the methyl group (<b>CH<sub>3</sub></b>; an epigenetic factor) found in some dietary sources could bind to the DNA and activate or repress genes. The binding sites are broadly located in the <b>open-chromatin regions</b> and the <b>histone tails</b>. The genes in the length of DNA wrapped around the histone complexes are fundamentally inactive, although the tagging of the histone tails with the methyl group could possibly lead to the reorganization of the wrapped DNA. Bottom line is that the epigenetic factors play crucial role in orchestrating gene regulation and hence the study of epigenome is arguably <i>a cut above</i>.  </p>  
+
+<p align="justify"> This exercise is based on <b>Galaxy Infinium Human Methylation BeadChip tool</b> that features the technology from <a href = "https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga/using-tcga/technology/illumina-humanmethylation450-data-sheet" > Illumina </a> and represents many popular algorithms for detecting somatic genetic alterations from genome and exome data. The data [3] is explored for identification of differentially methylated regions and positions associated with treatment resistant melanomas.</p>
+
+<p align="justify">The workflow combines 5 main steps, starting with raw intensity data loading (.idat) and then optional preprocessing and normalisation of the data. The next quality control step performs an additional sample check to remove low-quality data, which normalisation cannot detect. The workflow gives the user the opportunity to perform any of these preparation and data cleaning steps, including a highly recommended genetic variation annotation step resulting in single nucleotide polymorphism identification and removal. Finally, the dataset generated through all of these steps can be used to hunt (find) differentially-methylated positions (DMP) and regions (DMR) with respect to a phenotype covariate. </p>
+
+<h2> Loading Raw Intensity Data </h2>
+
+Create a new history and add the following files to the session.
+
+<ul>
+<li><i>https://zenodo.org/record/1251211/files/GSM1588704_8795207135_R01C02_Red.idat</i></li>
+<li><i>https://zenodo.org/record/1251211/files/GSM1588706_8795207135_R02C02_Red.idat</i></li>
+<li><i>https://zenodo.org/record/1251211/files/GSM1588705_8795207119_R05C02_Red.idat</i></li>
+<li><i>https://zenodo.org/record/1251211/files/GSM1588707_8795207119_R06C02_Red.idat</i></li>
+<li><i>https://zenodo.org/record/1251211/files/GSM1588704_8795207135_R01C02_Grn.idat</i></li>
+<li><i>https://zenodo.org/record/1251211/files/GSM1588706_8795207135_R02C02_Grn.idat</i></li>
+<li><i>https://zenodo.org/record/1251211/files/GSM1588705_8795207119_R05C02_Grn.idat</i></li>
+<li><i>https://zenodo.org/record/1251211/files/GSM1588707_8795207119_R06C02_Grn.idat</i></li>
+</ul>
+
+
+<h2> References </h2>
+
+<ol>
+<li> Illumina Infinium Methylation Assay Overview. Accessed: 2020-02-22. </li>
+<li> Aryee, M. J., A. E. Jaffe, H. Corrada-Bravo, C. Ladd-Acosta, A. P. Feinberg et al., 2014 Minfi: a flexible and comprehensive Bioconductor package for the analysis of Infinium DNA methylation microarrays. Bioinformatics 30: 1363–1369. 10.1093/bioinformatics/btu049 </li>
+<li> Hugo, W., H. Shi, L. Sun, M. Piva, C. Song et al., 2015 Non-genomic and Immune Evolution of Melanoma Acquiring MAPKi Resistance. Cell 162: 1271–1285. 10.1016/j.cell.2015.07.061  </li>
+<li> Katarzyna Murat, Krzysztof Poterlowicz, 2020 Infinium Human Methylation BeadChip (Galaxy Training Materials). /training-material/topics/epigenetics/tutorials/ewas-suite/tutorial.html Online; accessed Sat Aug 08 2020 </li>
+<li> Batut et al., 2018 Community-Driven Data Analysis Training for Biology Cell Systems 10.1016/j.cels.2018.05.012  </li>
+</ol>
