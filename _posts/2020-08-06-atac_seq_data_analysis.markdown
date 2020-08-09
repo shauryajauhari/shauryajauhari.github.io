@@ -3,7 +3,7 @@ layout: post
 title: ATAC-Seq Data Analysis
 date: 2020-08-06 20:31:21 +0230
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: # Add image post (optional)
+img: atacSeqIntro.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Bioinformatics, Epigenetics]
 ---
@@ -38,7 +38,7 @@ tags: [Bioinformatics, Epigenetics]
 <br>
 
 
-<p align="justify"> With the data successfully imported into Galaxy, we add a tag called <b>#SRR891268_R1</b> to the R1 file and a tag called <b>#SRR891268_R2</b> to the R2 file. Also, check that the datatype of the 2 FASTQ files is <b>fastqsanger.gz</b> and the peak file (ENCFF933NTR.bed.gz) is <b>encodepeak</b>. The procedures are illustrated below. </p>
+<p align="justify"> With the data successfully imported into Galaxy, we add a tag called <b>#SRR891268_R1</b> to the R1 file and a tag called <b>#SRR891268_R2</b> to the R2 file. (<b>Note: Tags</b> are extremely useful in flagging components that are part of a result from a tool. This could potentially be a <i>life-saver</i> when it comes to lengthy workflows, where it is hard to be track of, say, input data that was imported in the beginning of the pipeline). Also, check that the datatype of the 2 FASTQ files is <b>fastqsanger.gz</b> and the peak file (ENCFF933NTR.bed.gz) is <b>encodepeak</b>. The procedures are illustrated below. </p>
 
 <br>
 <p align="center">
@@ -276,6 +276,114 @@ Rename the output file to <i>MACS bigwig</i>.
 
 <h3> Sort CTCF Peaks </h3>
 
+<p align="justify"> We can use several exploratory tools to visualize specific genomic regions; a genome browser like <a href = "http://software.broadinstitute.org/software/igv/" > IGV </a> or <a href = "https://genome.ucsc.edu/" > UCSC Browser </a>, or choose <a href = "https://github.com/deeptools/pyGenomeTracks" > pyGenomeTracks </a> to make graphics. In the module, we employ <b>pyGenomeTracks</b>. <b> The pyGenomeTracks tool needs all BED files sorted </b>, thus we sort the CTCF (our protein of interest, that binds to the open chromatin) peaks. </p>
+
+<br>
+<p align="center">
+<img width="600" src="/assets/img/bedtoolsSortbedOptions.png">
+</p>
+<br>
+
+<h3> Create heatmap of coverage at TSS with deepTools </h3>
+
+<h4> computeMatrix </h4>
+ 
+ The output of this function is a pre-requisite to the <i>plotHeatmap</i> function. It delivers a matrix with features to plot.
+
+ Input the following values of parameters in <i><b>computeMatrix</b></i>.
+
+<ul>
+- In “Select regions”:
+<li>- “Select regions”</li>
+<li><i>“Regions to plot”</i> : <b>chr22 genes</b></li>
+<li><i>“Sample order matters”</i> : <b>No</b></li>
+<li><i>“Score file”</i> : <b>MACS2 bigwig</b></li>
+<li><i>“computeMatrix has two main output options”</i> : <b>reference-point</b></li>
+<li><i>“The reference point for the plotting”</i> : <b>beginning of region (e.g. TSS)</b></li>
+<li><i>“Show advanced output settings”</i> : <b>no</b></li>
+<li><i>“Show advanced options”</i> : <b>yes</b></li>
+<li><i>“Convert missing values to 0?”</i> : <b>yes</b></li>
+</ul>
+
+
+
+<h4> plotProfile </h4>
+
+<p align="justify"> This visualization gives the mean coverage around the TSS. </p>
+
+<br>
+<p align="center">
+<img width="600" src="/assets/img/atacSeqPlotProfileOptions.png">
+</p>
+<br>
+
+<br>
+<p align="center">
+<img width="600" src="/assets/img/atacSeqPlotProfileResult.png">
+</p>
+<br>
+
+
+<h4> plotHeatmap </h4>
+
+<p align="justify"> This function scales the output of the <i>plotProfile</i> with a heatmap. Each line will be a transcript (instances from <i>chr22 genes</i>). The coverage will be summarized with a color code from red (no coverage) to blue (maximum coverage). All TSS will be aligned in the middle of the figure and only the 2 kb around the TSS will be displayed. Another plot, on top of the heatmap, will show the <b>mean signal at the TSS</b>. </p>
+
+<br>
+<p align="center">
+<img width="600" src="/assets/img/atacSeqPlotHeatmapResult.png">
+</p>
+<br>
+
+
+<h3> Visualise Regions with pyGenomeTracks </h3>
+
+Load the tool and instantiate the following constraints.
+
+<ul>
+<li><i>“Region of the genome to limit the operation”</i>: <b>chr22:37,193,000-37,252,000</b></li>
+- In “Include tracks in your plot”:
+<li>“1. Include tracks in your plot”</li>
+<li><i>“Choose style of the track”</i>: <b> Bigwig track</b></li>
+<li><i>“Plot title”</i>: <b> Coverage from MACS2 (extended +/-50bp)</b></li>
+<li><i>“Track file bigwig format”</i>: <b> MACS2 bigwig.</b></li>
+<li><i>“Color of track”</i>: <b> Select the color of your choice</b></li>
+<li><i>“Minimum value”</i>: <b> 0</b></li>
+<li><i>“height”</i>: <b> 5</b></li>
+<li><i>“Show visualization of data range”</i>: <b> Yes</b></li>
+<br>
+- “Insert Include tracks in your plot”
+<li><i>“Choose style of the track”</i>: <b> NarrowPeak track</b></li>
+<li><i>“Plot title”</i>: <b> Peaks from MACS2 (extended +/-50bp)</b></li>
+<li><i>“Track file bed format”</i>: <b> MACS2 callpeak(narrow Peaks)</b></li>
+<li><i>“Color of track”</i>: <b> Select the color of your choice</b></li>
+<li><i>“display to use”</i>: <b> box: Draw a box</b></li>
+<li><i>“Plot labels (name, p-val, q-val)”</i>: <b> No</b></li>
+<br>
+- “Insert Include tracks in your plot”
+<li><i>“Choose style of the track”</i>: <b> Gene track / Bed track</b></li>
+<li><i>“Plot title”</i>: <b> Genes</b></li>
+<li><i>“Track file bed format”</i>: <b> chr22 genes</b></li>
+<li><i>“Color of track”</i>: <b> Select the color of your choice</b></li>
+<li><i>“height”</i>: <b> 5</b></li>
+<li><i>“Put all labels inside the plotted region”</i>: <b> Yes</b></li>
+<li><i>“Allow to put labels in the right margin”</i>: <b> Yes</b></li>
+<br>        
+- “Insert Include tracks in your plot”
+<li><i>“Choose style of the track”</i>: <b> NarrowPeak track</b></li>
+<li><i>“Plot title”</i>: <b> CTCF peaks</b></li>
+<li><i>“Track file bed format”</i>: <b> Select the dataset bedtools SortBED of ENCFF933NTR.bed</b></li>
+<li><i>“Color of track”</i>: <b> Select the color of your choice</b></li>
+<li><i>“display to use”</i>: <b> box: Draw a box</b></li>
+<li><i>“Plot labels (name, p-val, q-val)”</i>: <b> No</b></li>
+</ul>
+
+We realize something like this.
+
+<br>
+<p align="center">
+<img width="900" src="/assets/img/atacSeqMACSpyGenomeTracks.png">
+</p>
+<br>
 
 <h2> References </h2>
 <ol>
