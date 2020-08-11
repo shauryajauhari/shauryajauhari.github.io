@@ -156,7 +156,7 @@ The final output looks like this. Note that the buffer regions of 1Kb on either 
 
 <p align="justify"> Another flavor of this analysis, and arguably more purposeful, is the elicitation of differentially methylated regions, that could possibly map the variegated methylation states. For the same, we shall use the tool <b> metilene </b>. More information on the tool is available <a href = "https://www.bioinf.uni-leipzig.de/Software/metilene/" > here </a>.</p>
 
-<p> Install the said tool from the <a href = " https://toolshed.g2.bx.psu.edu/" > tool shed </a>, download the following files from the repository mentioned previously, and upload them to the local Galaxy instance.
+<p align="justify"> Install the said tool from the <a href = " https://toolshed.g2.bx.psu.edu/" > tool shed </a>, download the following files from the repository mentioned previously, and upload them to the local Galaxy instance.
 <ul>
 <li> <i> NB1_CpG.meth.bedGraph </i> </li>
 <li> <i> NB2_CpG.meth.bedGraph </i> </li>
@@ -170,6 +170,63 @@ The final output looks like this. Note that the buffer regions of 1Kb on either 
 <p align="center">
   <img width="900" src="/assets/img/metileneOptions.png">
 </p>
+<br>
+
+
+<p align="justify"> Amongst other results, trace the PDF output file and look for the plots. </p>
+
+
+
+<br>
+<figure>
+<p align="center">
+<img width="500" height="500" src="/assets/img/meanMethylationDifference.png">
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="center">
+<img width="500" height="500" src="/assets/img/dmrLength.png">
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="center">
+<img width="500" height="500" src="/assets/img/dmrLengthCPG.png">
+</p>
+</figure>
+<br>
+
+<br>
+<figure>
+<p align="center">
+<img width="500" height="500" src="/assets/img/meanMethylationDifferenceQ.png">
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="center">
+<img width="500" height="500" src="/assets/img/meanGroups.png">
+</p>
+</figure>
+<br>
+
+
+<br>
+<figure>
+<p align="center">
+<img width="500" height="500" src="/assets/img/dmrLengthNTCPG.png">
+</p>
+</figure>
 <br>
 
 
