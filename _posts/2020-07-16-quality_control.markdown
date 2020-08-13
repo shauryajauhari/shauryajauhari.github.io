@@ -57,7 +57,7 @@ tags: [NGS, Seq-Data]
 </p>
 <br>
 
-<p>For more details on the format, please visit details <a href = "https://en.wikipedia.org/wiki/FASTQ_format" > here </a>. </p>
+<p>For more details on the format, please visit the link <a href = "https://en.wikipedia.org/wiki/FASTQ_format" > here </a>. </p>
 
 
  <p>After looking at the data file, the next step is to install an appropriate tool. For our case, we shall implement <b><a href = "https://www.bioinformatics.babraham.ac.uk/projects/fastqc/" > FASTQC </a></b> for summarizing the read quality of the fastq file, and analyze other statistics. For a quick look on installing a tool in the local distribution of galaxy, please follow the link <a href = "http://shauryajauhari.github.io/installing_tools_in_galaxy/" > here </a>.</p>

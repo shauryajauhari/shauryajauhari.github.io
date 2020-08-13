@@ -155,7 +155,7 @@ Execute the same tool as above, with the choices as depicted in the screenshot b
 </figure>
 <br>
 
-<p align="justify"> Again, rename the results to <i>predicted_data_gradient_boosting</i>. Now, load the tool <b> Plot actual vs predicted curves and residual plots</b> from the repository <b>plotly_regression_performance_plots</b>.</p>
+<p align="justify"> Again, rename the results to <i>predicted_data_gradient_boosting</i>. Now, load the tool <b> Plot actual vs predicted curves and residual plots</b>.</p>
 
 <br>
 <figure>

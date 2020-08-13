@@ -19,7 +19,7 @@ tags: [Bioinformatics, Epigenetics]
 <p align="center">
   <img width="500" src="/assets/img/bss.png">
 </p>
-<figcaption> <i>Credit: http://www.nxt-dx.com/epigenetics/bisulfite-sequencing/</i> </figcaption>
+<figcaption> <b>Credit:</b> <a href = "http://www.nxt-dx.com/epigenetics/bisulfite-sequencing/" > http://www.nxt-dx.com/epigenetics/bisulfite-sequencing/ </a> </figcaption>
 </figure>
 <br>
 

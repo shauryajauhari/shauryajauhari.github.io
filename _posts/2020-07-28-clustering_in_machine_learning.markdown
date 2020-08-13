@@ -10,13 +10,13 @@ tags: [Bioinformatics, Machine Learning, Data Science]
 
 <h2> Introduction </h2>
 
-<p align="justify"> For an attentive audience, it is known that Machine Learning provides (broadly) for <i> clustering </i>, <i> classification </i>, and <i> regression </i> applications. In this module, we shall discover clustering, which is a form of <b> unsupervised learning </b>. For a fledged version of this tutorial, visit this <a href = "https://galaxyproject.github.io/training-material/topics/statistics/tutorials/clustering_machinelearning/tutorial.html" > page </a>.</p>
+<p align="justify"> For an attentive audience, it is known that Machine Learning provides (broadly) for <i> clustering </i>, <i> classification </i>, and <i> regression </i> applications. In this module, we shall discover clustering, which is a form of <b> unsupervised learning</b>. For a fledged version of this tutorial, visit this <a href = "https://galaxyproject.github.io/training-material/topics/statistics/tutorials/clustering_machinelearning/tutorial.html" > page </a>.</p>
 
 <h3> Unsupervised Learning </h3>
 
-<p align="justify"> In crude terms, unsupervised learning means <i> learning from scratch </i>. Imagine a dump of <i> unstructured </i> data, with absolutely no clues of direction and symmetry. Although, the attributes of the data are known, it has been randomly spewed over an assembly. Intuitively, the first task is to sift the like ones together. It makes sense. We want to have similar data points together such that the member elements of these cohorts are closer in resemblance as compared to non-members. This is the essence of <i><b>clustering</b></i>. </p>
+<p align="justify"> In crude terms, unsupervised learning means <i> learning from scratch</i>. Imagine a dump of <i> unstructured </i> data, with absolutely no clues of direction and symmetry. Although, the attributes of the data are known, it has been randomly spewed over an assembly. Intuitively, the first task is to sift the like ones together. It makes sense. We want to have similar data points together such that the member elements of these cohorts are closer in resemblance as compared to non-members. This is the essence of <i><b>clustering</b></i>. </p>
 
-<p align="justify"> In India, a dish called <i> Khichdi </i> is fairly popular in the northern provinces. It is basically a mix of lentil and rice, served with yogurt and <i>ghee</i> (fat derived from milk). When it came for an intuition, I couldn't resist the urge to make a mention. If <i>Khichdi</i> could be deemed as raw abundance of data, the individual clumps of lentil and rice are two distinct clusters of this data. This is <i>information</i>; information is processed data. For establishing these clusters, we're choosing grains on the basis of their physical properties (color, shape, etc.). With experimental data, we shall adopt mathematical techniques that help underline these groupings.</p>
+<p align="justify"> In India, a dish called <i> Khichdi </i> is fairly popular in the northern provinces. It is basically a mix of lentil and rice, served with yogurt and <i>ghee</i> (fat derived from milk). When it came for an intuition, I couldn't resist the urge to make a mention. If <i>Khichdi</i> could be deemed as a raw abundance of data, the individual clumps of lentil and rice are two distinct clusters of this data. This is <i>information</i>; information as in <b>processed data</b>. For establishing these clusters, we're choosing grains on the basis of their physical properties (color, shape, etc.). With experimental data, we shall adopt mathematical techniques that help underline these groupings.</p>
 
 
  <table style="width:80%" align="center">
@@ -126,18 +126,18 @@ Our objective is to group the flowers into similar categories. To do that look f
 
 Make the following choices.
 
-
-    “Select the format of input data”: Tabular Format (tabular,txt)
-        param-file “Data file with numeric values”: iris
-        param-check “Does the dataset contain header”: Yes
-        param-select “Choose how to select data by column”: All columns EXCLUDING some by column header name(s)
-            param-text “Type header name(s)”: Species
-        param-select “Clustering Algorithm”: Hierarchical Agglomerative Clustering
-        In “Advanced options”
-            param-text “Number of clusters”: 2
-            param-select “Affinity”: Euclidean
-            param-select “Linkage”: ward
-
+<ul>
+<li><i>“Select the format of input data”</i>: <b>Tabular Format (tabular,txt)</b></li>
+<li><i>“Data file with numeric values”</i>: <b> iris</b></li>
+<li><i>“Does the dataset contain header”</i>: <b> Yes</b></li>
+<li><i>“Choose how to select data by column”</i>: <b> All columns EXCLUDING some by column header name(s)</b></li>
+<li><i>“Type header name(s)”</i>: <b> Species</b></li>
+<li><i>“Clustering Algorithm”</i>: <b> Hierarchical Agglomerative Clustering</b></li>
+- In “Advanced options”
+<li><i>“Number of clusters”</i>: <b> 2</b></li>
+<li><i>“Affinity”</i>: <b> Euclidean</b></li>
+<li><i>“Linkage”</i>: <b> ward</b></li>
+</ul>
 
 After the successful run, rename the resulting dataset.
 
@@ -194,17 +194,16 @@ Visualize the resulting image.
 
 
 Moving ahead, we're going to execute the same protocol as above, now with k-means clustering algorithm. Make the following choices with the <i> Numeric Clustering </i> tool again.
-
-    Select the format of input data”: Tabular Format (tabular,txt)
-
-        param-file “Data file with numeric values”: iris
-        param-check “Does the dataset contain header”: Yes
-        param-select “Choose how to select data by column”: All columns EXCLUDING some by column header name(s)
-            param-text “Type header name(s)”: Species
-        param-select “Clustering Algorithm”: KMeans
-        In “Advanced options”
-            param-text “Number of clusters”: 2
-
+<ul>
+<li><i>Select the format of input data”</i>: <b> Tabular Format (tabular, txt)</b></li>
+<li><i>“Data file with numeric values”</i>: <b> iris</b></li>
+<li><i>“Does the dataset contain header”</i>: <b> Yes</b></li>
+<li><i>“Choose how to select data by column”</i>: <b> All columns EXCLUDING some by column header name(s)</b></li>
+<li><i>“Type header name(s)”</i>: <b> Species</b></li>
+<li><i>“Clustering Algorithm”</i>: <b> KMeans</b></li>
+- In “Advanced options”
+<li><i>“Number of clusters”</i>: <b> 2</b></li>
+</ul>
 
 <p align="justify"> For convenience, we'll rename the results as <i> k-means clustering </i>. Next, same as before, we'll plot the resulting data table with ggplot2. </p>
 

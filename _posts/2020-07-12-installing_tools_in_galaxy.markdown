@@ -18,7 +18,7 @@ tags: [Galaxy]
 <ol>
 <b> <li> Connecting to Tool Shed </li></b>
 <p> By default, Galaxy is already connected to the <a href = "https://toolshed.g2.bx.psu.edu/" > Main Tool Shed </a>. Another requisite to install tools from the tool shed, is <a href = "https://www.mercurial-scm.org/" > Mercurial </a> that must exists in the system hosting the production version of Galaxy. 
-To ensure that the Galaxy is connected to the main tool shed, view the configuration file for Galaxy (/path/to/galaxy/config/galaxy.yml). </p>
+To ensure that the Galaxy is connected to the main tool shed, view the configuration file for Galaxy (<b><i>/path/to/galaxy/config/galaxy.yml</i></b>). </p>
 
 <p align="left">
   <img width="400" src="/assets/img/cmdConfigGalaxy.png">
