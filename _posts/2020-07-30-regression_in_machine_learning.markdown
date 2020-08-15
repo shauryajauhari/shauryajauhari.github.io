@@ -253,7 +253,7 @@ Install the tool and make the following choices.
 
 <ul>
 <li><i>“n_splits”</i>:<b>5</b></li>
-<li><i>“Whether to shuffle data before splitting”</i>: Yes</b></li>
+<li><i>“Whether to shuffle data before splitting”</i>: <b>Yes</b></li>
 <li><i>“Random seed number”</i> :<b>3111696</b></li>                        
 </ul>
 
