@@ -40,21 +40,24 @@ tags: [Bioinformatics, Deep Learning, Statistics, Data Science]
 
 <p align="justify"> The data in place, we may proceed towards building the model architecture with the following paramaters. </p>
 
-    “Select keras model type”: Sequential
-    “input_shape”: (7129, )
-    In “LAYER”:
-        param-repeat “1: LAYER”:
-            “Choose the type of layer”: Core -- Dense
-                “units”: 16
-                “Activation function”: elu
-        param-repeat “2: LAYER”:
-            “Choose the type of layer”: Core -- Dense
-                “units”: 16
-                “Activation function”: elu
-        param-repeat “3: LAYER”:
-            “Choose the type of layer”: Core -- Dense
-                “units”: 1
-                “Activation function”: sigmoid
+<ul>
+<li><i>“Select keras model type”</i>: <b>Sequential</b></li>
+<li><i>“input_shape”</i>: <b>(7129, )</b></li>
+- In “LAYER”:
+<li><i>“1: LAYER”</i>:</li>
+<li><i>“Choose the type of layer”</i>: <b>Core -- Dense</b></li>
+<li><i>“units”</i>: <b>16</b></li>
+<li><i>“Activation function”</i>: <b>elu</b></li>
+<li><i>“2: LAYER”</i>:</li>
+<li><i>“Choose the type of layer”</i>: <b>Core -- Dense</b></li>
+<li><i>“units”</i>: <b>16</b></li>
+<li><i>“Activation function”</i>: <b>elu</b></li>
+<li><i>“3: LAYER”</i>:</li>
+<li><i>“Choose the type of layer”</i>: <b>Core -- Dense</b></li>
+<li><i>“units”</i>: <b>1</b></li>
+<li><i>“Activation function”</i>: <b>sigmoid</b></li>
+</ul>
+
 
 <p align="justify"> The tool returns a JSON output file with the attributes about the neural networks. The same can be viewed by clicking the "eye" icon. This output goes to the next stage of consolidating the deep learning model with additional parameters as optimiser, loss function, and the number of epochs and batch size (training attributes). The loss function is chosen as <b>binary_crossentropy</b> as the learning task is classification of binary labels (0 and 1). </p>
 
@@ -66,16 +69,17 @@ tags: [Bioinformatics, Deep Learning, Statistics, Data Science]
 
 For the next stage, we specify the following constraints.
 
-
-    “Choose a building mode”: Build a training model
-    “Select the dataset containing model configurations (JSON)”: Keras model config (output of Create a deep learning model architecture using Keras tool)
-    “Do classification or regression?”: KerasGClassifier
-    In “Compile Parameters”:
-        “Select a loss function”: binary_crossentropy
-        “Select an optimizer”: RMSprop - RMSProp optimizer
-    In “Fit Parameters”:
-        “epochs”: 10
-        “batch_size”: 4
+<ul>
+<li><i>“Choose a building mode”</i>: <b>Build a training model</b></li>
+<li><i>“Select the dataset containing model configurations (JSON)”</i>: <b>Keras model config (output of Create a deep learning model architecture using Keras tool)</b></li>
+<li><i>“Do classification or regression?”</i>: <b>KerasGClassifier</b></li>
+- In “Compile Parameters”:
+<li><i>“Select a loss function”</i>: <b>binary_crossentropy</b></li>
+<li><i>“Select an optimizer”</i>: <b>RMSprop - RMSProp optimizer</b></li>
+- In “Fit Parameters”:
+<li><i>“epochs”</i>: <b>10</b></li>
+<li><i>“batch_size”</i>: <b>4</b></li>
+</ul>
 
 <i>KerasGClassifier</i> is chosen because the learning task is classfication i.e. assigning each patient a type of cancer. The loss function is <i>binary_crossentropy</i> because the labels are discrete and binary (0 and 1).
 
@@ -92,17 +96,17 @@ Install the tool- "Train, Test and Evaluation" and look for the interface as bel
 
 Choose these parameters.
 
-
-    “Select a scheme”: Train and validate
-    “Choose the dataset containing pipeline/estimator object”: Keras model builder (output of Create deep learning model tool)
-    “Select input type”: tabular data
-    “Training samples dataset”: X_train
-        “Does the dataset contain header”: Yes
-        “Choose how to select data by column”: All columns
-    “Dataset containing class labels or target values”: y_train
-        “Does the dataset contain header”: Yes
-        “Choose how to select data by column”: All columns
-
+<ul>
+<li><i>“Select a scheme”</i>: <b>Train and validate</b></li>
+<li><i>“Choose the dataset containing pipeline/estimator object”</i>: <b>Keras model builder (output of Create deep learning model tool)</b></li>
+<li><i>“Select input type”</i>: <b>tabular data</b></li>
+<li><i>“Training samples dataset”</i>: <b>X_train</b></li>
+<li><i>“Does the dataset contain header”</i>: <b>Yes</b></li>
+<li><i>“Choose how to select data by column”</i>: <b>All columns</b></li>
+<li><i>“Dataset containing class labels or target values”</i>: <b>y_train</b></li>
+<li><i>“Does the dataset contain header”</i>: <b>Yes</b></li>
+<li><i>“Choose how to select data by column”</i>: <b>All columns</b></li>
+</ul>
 
 <p> The above execution produces three outputs- 
 
@@ -116,15 +120,15 @@ In our run, we achieved an accuracy score of 0.8571428656578064 (~ 85%), which i
 
 <p align="justify"> After training the model, we are tempted to examine if the model is able to make acceptable predictions. We shall execute this model on the test data and study the results. We shall apply the <b> Model Prediction </b> tool, with the following paramaters, for the same. </p>
 
-
-    “Choose the dataset containing pipeline/estimator object”: Fitted estimator or estimator skeleton (output of Deep learning training and evaluation tool)
-    “Choose the dataset containing weights for the estimator above”: Weights trained (output of Create deep learning model tool)
-    “Select invocation method”: predict
-    “Select input data type for prediction”: tabular data
-        “Training samples dataset”: X_test
-        “Does the dataset contain header”: Yes
-        “Choose how to select data by column”: All columns
-
+<ul>
+<li><i>“Choose the dataset containing pipeline/estimator object”</i>: <b>Fitted estimator or estimator skeleton (output of Deep learning training and evaluation tool)</b></li>
+<li><i>“Choose the dataset containing weights for the estimator above”</i>: <b>Weights trained (output of Create deep learning model tool)</b></li>
+<li><i>“Select invocation method”</i>: <b>predict</b></li>
+<li><i>“Select input data type for prediction”</i>: <b>tabular data</b></li>
+<li><i>“Training samples dataset”</i>: <b>X_test</b></li>
+<li><i>“Does the dataset contain header”</i>: <b>Yes</b></li>
+<li><i>“Choose how to select data by column”</i>: <b>All columns</b></li>
+</ul>
 
 <br>
 <p align="center">

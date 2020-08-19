@@ -14,6 +14,7 @@ tags: [ChIP-Seq, DNA Methylation]
 
 <p> For this tutorial, let us create a new session(history) and follow the steps below. </p>
 
+<br>
 <p align="center">
   <img width="500" src="/assets/img/mvHistory.png">
 </p>
@@ -32,6 +33,7 @@ tags: [ChIP-Seq, DNA Methylation]
 
 <p> Your History Panel should probably look like this by now. </p>
 
+<br>
 <p align="center">
   <img width="200" height="200" src="/assets/img/historyPanel.png">
 </p>
@@ -53,17 +55,18 @@ tags: [ChIP-Seq, DNA Methylation]
 
 <p> When the data and tool have been setup, we commence with the execution with the following paramaters.
 <ul>
-<li> <i>Paired-end</i>: Specifying both input files </li>
-<li> <i>“Do you want to set paired-end options?”</i>: No </li>
-<li> <i>“Will you select a reference genome from your history or use a built-in index?”</i>: Use a built-in genome index</li>
-<li> <i>“Select reference genome”</i>: Mouse (Mus musculus): mm10</li>
-<li> <i>“Select analysis mode”:</i> Default setting only</li>
-<li> <i>“Save the bowtie2 mapping statistics to the history”</i>: Yes</li>
+<li> <i>Paired-end</i>: <b>Specifying both input files</b> </li>
+<li> <i>“Do you want to set paired-end options?”</i>: <b>No</b> </li>
+<li> <i>“Will you select a reference genome from your history or use a built-in index?”</i>: <b>Use a built-in genome index</b></li>
+<li> <i>“Select reference genome”</i>: Mouse (Mus musculus): <b>mm10</b></li>
+<li> <i>“Select analysis mode”:</i> <b>Default setting only</b></li>
+<li> <i>“Save the bowtie2 mapping statistics to the history”</i>: <b>Yes</b></li>
 </ul>
 </p>
 
 <p> Before anything though, we are confronted with a problem. The reference genome is not available in the local Galaxy.</p>
 
+<br>
 <p align="center">
   <img width="500" src="/assets/img/dataError.png">
 </p>
@@ -74,6 +77,7 @@ tags: [ChIP-Seq, DNA Methylation]
 
 <p align="justify">There is also a possibility of manually uploading a genome file (.fa, .fasta), and then recalling it from session history to be used as the purported reference genome. There are two problems, albeit. First, it is not comforting to manually load reference genome and build indices for every tool that we want to use. It is just too time consuming and un-professional. We want a reference genome to be available to every tool and not just the current one. Also, an uploaded file is unique to a history. Second, the tools take a little extra time to process the external, reference genome file, as opposed to the ones that are already "build-in". Consider akin to this scenario the mobile apps that are automatically off-loaded from the system due to seldom usage. This aids memory management. Now, if you want them again, the system will download them back easily with "cached" indices. This is far efficient than installing the new ones.</p>
 
+<br>
 <p align="center">
   <img width="500" src="/assets/img/searchDataManagers.png">
 </p>
@@ -81,6 +85,7 @@ tags: [ChIP-Seq, DNA Methylation]
 
 <p align="justify"> A particular data manager, <b><i>data_manager_fetch_genome_dbkeys_all_fasta</i></b>, is required to load genome into the local instance of Galaxy. <i> P.S. You can seek this workshop <a href = "https://github.com/gvlproject/dagobah-training/blob/master/sessions/05-reference-genomes/ex1-reference-genomes.md" > page </a> for details. Also, bear in mind that the order of installation of the data managers is advised by the technical team of Galaxy. They recommend - retrieve fasta, index for samtools, index for picard, and then index for any other tools-in-use. Each step must be allowed to complete before proceeding. </i></p>
 
+<br>
 <p align="center">
   <img width="500" src="/assets/img/fetchGenomeDataManager.png">
 </p>
@@ -88,13 +93,13 @@ tags: [ChIP-Seq, DNA Methylation]
 
 <p align="justify"> After successful installation, you can browse <b>Local Data</b> under <b>Admin</b> option of Galaxy, and reach out to the installed data manager. Upon selecting, you'll have the option to select preloaded <i>dbkeys</i>. These can be traced in the <i>~/tool-data/shared/ucsc/builds.txt</i> file.</p>
 
-
+<br>
 <p align="center">
   <img width="500" src="/assets/img/adminLocalData.png">
 </p>
 <br>
 
-
+<br>
 <p align="center">
   <img width="500" src="/assets/img/dataManagerLink.png">
 </p>
@@ -145,21 +150,24 @@ tags: [ChIP-Seq, DNA Methylation]
 
 <p> Sure enough. Next, we move to executing Bowtie2. We shall assume the following paramaters. </p>
 
+<ul>
+<li><i>“Is this single or paired library”</i>: <b>Paired-end</b></li>
+<li><i>“FASTA/Q file #1”</i>: <b>reads_1</b></li>
+<li><i>“FASTA/Q file #2”</i>: <b>reads_2</b></li>
+<li><i>“Do you want to set paired-end options?”</i>: <b>No</b></li>
 
-    “Is this single or paired library”: Paired-end
-        param-file “FASTA/Q file #1”: reads_1
-        param-file “FASTA/Q file #2”: reads_2
+<p align="justify"> You should have a look at the parameters there, specially the mate orientation if you know it. They can improve the quality of the paired-end mapping. </p>
 
-        “Do you want to set paired-end options?”: No
+<li><i>“Will you select a reference genome from your history or use a built-in index?”</i>: <b>Use a built-in genome index</b></li>
+<li><i>“Select reference genome”: Mouse (Mus musculus)</i>: <b>mm10</b></li>
+<li><i>“Select analysis mode”</i>: <b>Default setting only</b></li>
 
-        You should have a look at the parameters there, specially the mate orientation if you know it. They can improve the quality of the paired-end mapping.
-    “Will you select a reference genome from your history or use a built-in index?”: Use a built-in genome index
-        “Select reference genome”: Mouse (Mus musculus): mm10
+<p align="justify"> You should have a look at the non default parameters and try to understand them. They can have an impact on the mapping and improving it. </p>
 
-    “Select analysis mode”: Default setting only
+<li><i>“Save the bowtie2 mapping statistics to the history”</i>: <b>Yes</b></li>
 
-    You should have a look at the non default parameters and try to understand them. They can have an impact on the mapping and improving it.
-    “Save the bowtie2 mapping statistics to the history”: Yes
+</ul>
+
 
 <p> The tool shall output two entities- <b> mapping stats </b> and <b> alignments </b>. </p>
 
@@ -182,11 +190,11 @@ tags: [ChIP-Seq, DNA Methylation]
 
 Use the following instance.
 
-“BAM file”: aligned reads (output of Bowtie2 tool)
-“Use reference sequence”: Locally cached
-
-    “Using genome”: Mouse (Mus musculus): mm10
-
+<ul>
+<li><i>“BAM file”</i>: <b>aligned reads (output of Bowtie2 tool)</b></li>
+<li><i>“Use reference sequence”</i>: <b>Locally cached</b></li>
+<li><i>“Using genome”</i>: <b>Mouse (Mus musculus): mm10</b></li>
+</ul>
 
 <font color="#800080" >
 <p><b>Exercise</b></p>
