@@ -40,7 +40,7 @@ tags: [Bioinformatics, Machine Learning, Data Science]
   </tr>
 </table> 
 
-<p><b> Clustering </b> aims to elucidate covert patterns in the unlabelled data and pull the alike closer into a <i>cluster</i>. Such clusters could be formed with the choice of certain <i> similarity measures </i>. There are several options available for such measures that we'll discuss hereafter.</p>
+<p align="justify"><b> Clustering </b> aims to elucidate covert patterns in the unlabelled data and pull the alike closer into a <i>cluster</i>. Such clusters could be formed with the choice of certain <i> similarity measures </i>. There are several options available for such measures that we'll discuss hereafter.</p>
 
 
 <h3> Clustering Algorithms </h3>
@@ -93,11 +93,11 @@ tags: [Bioinformatics, Machine Learning, Data Science]
 
 <p align="justify"> For the current session, we shall employ the acclaimed <a href = "https://en.wikipedia.org/wiki/Iris_flower_data_set" > <b> iris dataset </b></a>. Let us upload the following data to a novel Galaxy session.
 
-<ul>
+<ol>
 <li> <i> https://zenodo.org/record/3813447/files/iris.csv </i></li>
 <li><i> https://zenodo.org/record/3813447/files/circles.csv </i></li>
 <li><i> https://zenodo.org/record/3813447/files/moon.csv </i></li>
-</ul>
+</ol>
 </p>
 
 Rename the datasets to <i>iris</i>, <i>circles</i> and <i>moon</i> respectively. Also, ensure that the datatype for the datasets is <i> comma-separated-value (csv) </i>.
@@ -151,27 +151,28 @@ After the successful run, rename the resulting dataset.
 
 <p align="justify"> Next is the time to visualize the results. We shall use the <b> Scatterplot with ggplot2 </b> tool in the <b> ggplot2_point </b> repository to do this. Understandably, we will be able to see distinct clusters of data, i.e. different categories of flowers. Install and execute the tool with the following options. </p>
 
+<ul>
+<li><i>“Input tabular dataset”</i>: <b>Hierarchical clustering</b></li>
+<li><i>“Column to plot on x-axis”</i>: <b>1</b></li>
+<li><i>“Column to plot on y-axis”</i>: <b>2</b></li>
+<li><i>“Plot title”</i>: <b>Hierarchical clustering in iris data</b></li>
+<li><i>“Label for x axis”</i>: <b>Sepal length</b></li>
+<li><i>“Label for y axis”</i>: <b>Sepal width</b></li>
+      
+- In “Advanced Options”:
 
-      “Input tabular dataset”: Hierarchical clustering
-      “Column to plot on x-axis”: 1
-      “Column to plot on y-axis”: 2
-      “Plot title”: Hierarchical clustering in iris data
-      “Label for x axis”: Sepal length
-      “Label for y axis”: Sepal width
-      In “Advanced Options”:
+<li><i>“Data point options”</i>: <b>User defined point options</b></li>
+<li><i>“relative size of points”</i>: <b>2.0</b></li>
+<li><i>“Plotting multiple groups”</i>: <b>Plot multiple groups of data on one plot</b></li>
+<li><i>“column differentiating the different groups”</i>: <b>6</b></li>
+<li><i>“Color schemes to differentiate your groups”</i>: <b>Set 2 - predefined color pallete</b></li>
 
-          “Data point options”: User defined point options
-              “relative size of points”: 2.0
-          “Plotting multiple groups”: Plot multiple groups of data on one plot
-              “column differentiating the different groups”: 6
-              “Color schemes to differentiate your groups”: Set 2 - predefined color pallete
+- In “Output options”:
 
-      In “Output options”:
-
-          param-text “width of output”: 7.0
-          param-text “height of output”: 5.0
-          param-text “dpi of output”: 175.0
-
+<li><i>“width of output”</i>: <b>7.0</b></li>
+<li><i>“height of output”</i>: <b>5.0</b></li>
+<li><i>“dpi of output”</i>: <b>175.0</b></li>
+</ul>
 
 
 Visualize the resulting image.
@@ -209,26 +210,24 @@ Moving ahead, we're going to execute the same protocol as above, now with k-mean
 
 The paramter readings are as under.
 
-    “Input tabular dataset”: k-means clustering
-    “Column to plot on x-axis”: 1
-    “Column to plot on y-axis”: 2
-    “Plot title”: K-means clustering in iris data
-    “Label for x axis”: Sepal length
-    “Label for y axis”: Sepal width
-    In “Advanced Options”:
-
-        “Data point options”: User defined point options
-            “relative size of points”: 2.0
-        “Plotting multiple groups”: Plot multiple groups of data on one plot
-            “column differentiating the different groups”: 6
-            “Color schemes to differentiate your groups”: Set 2 - predefined color pallete
-
-    In “Output options”:
-
-        param-text “width of output”: 7.0
-        param-text “height of output”: 5.0
-        param-text “dpi of output”: 175.0
-
+<ul>
+<li><i>“Input tabular dataset”</i>: <b>k-means clustering</b></li>
+<li><i>“Column to plot on x-axis”</i>: <b>1</b></li>
+<li><i>“Column to plot on y-axis”</i>: <b>2</b></li>
+<li><i>“Plot title”</i>: <b>K-means clustering in iris data</b></li>
+<li><i>“Label for x axis”</i>: <b>Sepal length</b></li>
+<li><i>“Label for y axis”</i>: <b>Sepal width</b></li>
+- In “Advanced Options”:
+<li><i>“Data point options”</i>: <b>User defined point options</b></li>
+<li><i>“relative size of points”</i>: <b>2.0</b></li>
+<li><i>“Plotting multiple groups”</i>: <b>Plot multiple groups of data on one plot</b></li>
+<li><i>“column differentiating the different groups”</i>: <b>6</b></li>
+<li><i>“Color schemes to differentiate your groups”</i>: <b>Set 2 - predefined color pallete</b></li>
+- In “Output options”:
+<li><i>“width of output”</i>: <b>7.0</b></li>
+<li><i>“height of output”</i>: <b>5.0</b></li>
+<li><i>“dpi of output”</i>: <b>175.0</b></li>
+</ul>
 
 <br>
 <figure>
@@ -251,37 +250,35 @@ The paramter readings are as under.
 
 Executing the tool.
 
-    Select the format of input data”: Tabular Format (tabular,txt)
-
-        param-file “Data file with numeric values”: iris
-        param-check “Does the dataset contain header”: Yes
-        param-select “Choose how to select data by column”: All columns EXCLUDING some by column header name(s)
-            param-text “Type header name(s)”: Species
-        param-select “Clustering Algorithm”: DBSCAN
-
+<ul>
+<li><i>Select the format of input data”</i>: <b>Tabular Format (tabular,txt)</b></li>
+<li><i>“Data file with numeric values”</i>: <b>iris</b></li>
+<li><i>“Does the dataset contain header”</i>: <b>Yes</b></li>
+<li><i>“Choose how to select data by column”</i>: <b>All columns EXCLUDING some by column header name(s)</b></li>
+<li><i>“Type header name(s)”</i>: <b>Species</b></li>
+<li><i>“Clustering Algorithm”</i>: <b>DBSCAN</b></li>
+</ul>
 
 Visualizing results.
 
-    “Input tabular dataset”: DBSCAN clustering
-    “Column to plot on x-axis”: 1
-    “Column to plot on y-axis”: 2
-    “Plot title”: DBSCAN clustering in iris data
-    “Label for x axis”: Sepal length
-    “Label for y axis”: Sepal width
-    In “Advanced Options”:
-
-        “Data point options”: User defined point options
-            “relative size of points”: 2.0
-        “Plotting multiple groups”: Plot multiple groups of data on one plot
-            “column differentiating the different groups”: 6
-            “Color schemes to differentiate your groups”: Set 2 - predefined color pallete
-
-    In “Output options”:
-
-        param-text “width of output”: 7.0
-        param-text “height of output”: 5.0
-        param-text “dpi of output”: 175.0
-
+<ul>
+<li><i>“Input tabular dataset”</i>: <b>DBSCAN clustering</b></li>
+<li><i>“Column to plot on x-axis”</i>: <b>1</b></li>
+<li><i>“Column to plot on y-axis”</i>: <b>2</b></li>
+<li><i>“Plot title”</i>: <b>DBSCAN clustering in iris data</b></li>
+<li><i>“Label for x axis”</i>: <b>Sepal length</b></li>
+<li><i>“Label for y axis”</i>: <b>Sepal width</b></li>
+- In “Advanced Options”:
+<li><i>“Data point options”</i>: <b>User defined point options</b></li>
+<li><i>“relative size of points”</i>: <b>2.0</b></li>
+<li><i>“Plotting multiple groups”</i>: <b>Plot multiple groups of data on one plot</b></li>
+<li><i>“column differentiating the different groups”</i>: <b>6</b></li>
+<li><i>“Color schemes to differentiate your groups”</i>: <b>Set 2 - predefined color pallete</b></li>
+- In “Output options”:
+<li><i>“width of output”</i>: <b>7.0</b></li>
+<li><i>“height of output”</i>: <b>5.0</b></li>
+<li><i>“dpi of output”</i>: <b>175.0</b></li>
+</ul>
 
 <br>
 <figure>

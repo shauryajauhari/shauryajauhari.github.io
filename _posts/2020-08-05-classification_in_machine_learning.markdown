@@ -23,11 +23,11 @@ tags: [Bioinformatics, Machine Learning, Data Science]
 
 <p align="justify"> We have the data pre-clustered into training and testing sets and could be downloaded into the Galaxy instance via the following links: </p>
 
-<ul>
+<ol>
 <li><i> https://zenodo.org/record/3738729/files/train_rows.csv </i></li>
 <li><i> https://zenodo.org/record/3738729/files/test_rows_labels.csv </i></li>
 <li><i> https://zenodo.org/record/3738729/files/test_rows.csv  </i></li>
-</ul>
+</ol>
 
 As usual, we rename the datasets for our convenience. Now that we have the data, we will get into the core of our analysis. Let us begin by applying the logistic regression classifier to model the data.
 

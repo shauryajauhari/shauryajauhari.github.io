@@ -24,11 +24,11 @@ tags: [Bioinformatics, Epigenetics]
 
 <p align="justify"> As a norm, we will create a new History (session) for this data analysis module. Further, we load the data from the following web-links. </p>
 
-<ul>
+<ol>
 <li><i> https://zenodo.org/record/3862793/files/ENCFF933NTR.bed.gz </i></li>
 <li><i> https://zenodo.org/record/3862793/files/SRR891268_chr22_enriched_R1.fastq.gz </i></li>
 <li><i> https://zenodo.org/record/3862793/files/SRR891268_chr22_enriched_R2.fastq.gz </i></li>
-</ul>
+</ol>
 
 
 <br>
