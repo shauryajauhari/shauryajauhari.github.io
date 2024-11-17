@@ -8,9 +8,8 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Shaurya Jauhari # add your name
 author-img: myself.jpg # add your photo
-about-author: I am a Bioinformatician in training with a background in Computer Science. Everyday 
-  I go to terms with new facets of Molecular Biology and contemplate the computational
-  equivalence. The nature has so designed, that almost every phenomena could possibly
+about-author: I am a Bioinformatician in training with a background in Computer Science; resume <a href="https://shauryajauhari.github.io/assets/files/ShauryaJauhariCV.pdf">here</a>. Everyday I go to terms with new facets of Molecular Biology and contemplate the computational
+ equivalence. The nature has so designed, that almost every phenomena could possibly
   have a mathematical ground. That is the scope and endeavor of my research. Stay tuned! # add description
 social-twitter: shauryajauhari # add your Twitter handle
 social-facebook: ishauryajauhari # add your Facebook handle
